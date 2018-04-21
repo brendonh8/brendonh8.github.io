@@ -286,6 +286,7 @@ defaults:
       share: true
 
 collections:
+  -portfolio
   portfolio:
     output: true
     permalink: /:collection/:path/
