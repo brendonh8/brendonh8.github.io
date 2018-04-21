@@ -133,7 +133,7 @@ author:
 include:
   - .htaccess
   - ["_pages"]
-  - ["_site"]
+  - _posts
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
@@ -253,10 +253,6 @@ compress_html:
   ignore:
     envs: development
 
-collections:
-  portfolio:
-    output: true
-    permalink: /:collection/:path/
 
 # Defaults
 defaults:
@@ -289,3 +285,8 @@ defaults:
       layout: single
       author_profile: false
       share: true
+
+collections:
+  portfolio:
+    output: true
+    permalink: /:collection/:path/
