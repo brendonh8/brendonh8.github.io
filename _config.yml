@@ -132,7 +132,7 @@ author:
 # Reading Files
 include:
   - .htaccess
-  - _docs
+  - _pages
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
