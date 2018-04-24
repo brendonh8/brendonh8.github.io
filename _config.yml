@@ -284,9 +284,3 @@ defaults:
       layout: single
       author_profile: false
       share: true
-
-collections:
-  -portfolio
-  portfolio:
-    output: true
-    permalink: /:collection/:path/
