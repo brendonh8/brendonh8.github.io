@@ -4,7 +4,7 @@ permalink: /data-analysis/
 title: "Data Analysis Posts"
 author_profile: true
 header:
-    image: '/assets/images/america-buildings-city-37646.jpg'
+    image: "/assets/images/america-buildings-city-37646.jpg"
 ---
 
 {% include base_path %}
