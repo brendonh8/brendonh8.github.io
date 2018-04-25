@@ -1,6 +1,6 @@
 ---
-title: "About"
 permalink: /about/
+title: "About"
 header:
     image: "/assets/images/america-american-flag-architecture-450597.jpg"
 ---

@@ -1,6 +1,6 @@
 ---
-layout: archive
 permalink: /data-analysis/
+layout: archive
 title: "Data Analysis Posts"
 author_profile: true
 header:
