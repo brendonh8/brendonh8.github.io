@@ -1,10 +1,10 @@
 ---
 title: "OpenStreetMap Data Cleaning"
-date: 2018-02-02
+date: 2017-07-10
 tags: [data analysis, python, SQL]
 header:
     overlay_image: "/assets/images/adventure-calm-clouds-414171.jpg"
-excerpt: "Cleaning and analysis of user contributed XML map data of Denver"
+excerpt: "This project focuses on cleaning and querying user contributed map data of Denver, Colorado"
 ---
 
 ### Map Area: Denver, CO

@@ -1,7 +1,7 @@
 ---
 title: "The Titianic Wreck Analysis"
-date: 2018-01-01
-tags: [machine learning, data analysis]
+date: 2017-06-05
+tags: [python, data analysis]
 header:
     overlay_image: "/assets/images/cruise-ship-ferry-island-164180.jpg"
 excerpt: "An analysis of survivor data from the Titanic"
