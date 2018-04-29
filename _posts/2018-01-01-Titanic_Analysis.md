@@ -3,7 +3,7 @@ title: "The Titianic Wreck Analysis"
 date: 2018-01-01
 tags: [machine learning, data analysis]
 header:
-    image: "/assets/images/birds-cold-conifer-917494.jpg"
+    image: "/assets/images/cruise-ship-ferry-island-164180.jpg"
 excerpt: "Machine Learning, Enron, Analysis"
 ---
 
