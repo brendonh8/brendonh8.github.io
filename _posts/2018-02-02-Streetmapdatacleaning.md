@@ -96,6 +96,7 @@ This output the following data for the first five entries:
 |Boulder|3263|
 |Aurora|1915|
 |Broomfield|1005|
+
 Overall there was a total of 80 unique cities. The bulk being in the largest city Denver, but also gathering data from quite a few neighboring towns in the area.
 
 ### Cleaning Phone Numbers
