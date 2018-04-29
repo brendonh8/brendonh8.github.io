@@ -1,4 +1,3 @@
-
 ---
 title: "OpenStreetMap Data Cleaning"
 date: 2018-02-02
