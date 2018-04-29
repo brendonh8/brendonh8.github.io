@@ -3,14 +3,14 @@ title: "OpenStreetMap Data Cleaning"
 date: 2018-02-02
 tags: [data analysis, python, SQL]
 header:
-    overlay_image: "/assets/images/birds-cold-conifer-917494 (1).jpg"
-excerpt: "Cleaning and analysis of user contributed XML map data of Denver, CO."
+    overlay_image: "/assets/images/adventure-calm-clouds-414171.jpg"
+excerpt: "Cleaning and analysis of user contributed XML map data of Denver"
 ---
 
 ### Map Area: Denver, CO
 
- - https://mapzen.com/data/metro-extracts/metro/denver-boulder_colorado/
- - https://www.openstreetmap.org/relation/253750
+
+[Link to map data](https://www.openstreetmap.org/relation/253750)
 
 I have always considered moving to Denver, so I decided to use the area for this project. I am interested in the information I will get from the data.
 
