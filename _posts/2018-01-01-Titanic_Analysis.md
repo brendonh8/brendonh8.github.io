@@ -344,7 +344,7 @@ plot.set_title('Boxplot of Fare in each Port')
 
 
 <figure>
-	<img src="/assets/images/project1/output_10_1"
+	<img src="/assets/images/project1/output_10_1.png"
 </figure>
 
 ![png](output_10_1.png)
