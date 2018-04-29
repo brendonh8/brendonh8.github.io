@@ -342,10 +342,7 @@ plot.set_title('Boxplot of Fare in each Port')
     <matplotlib.text.Text at 0x1240cb5d0>
 
 
-
-{% include figure image_path="/assets/images/project1/output_10_1.png" %}
-
-![png](output_10_1.png)
+![image-center](/assets/images/project1/output_10_1.png){: .align-center}
 
 
 Observing the boxplot above concludes that these missing values should be replaced with C. Looking at Fare values for each port, you can see that the median for first class passengers at C is right around 80.
