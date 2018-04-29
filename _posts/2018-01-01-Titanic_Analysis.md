@@ -336,12 +336,6 @@ sns.boxplot(titanic_df['Embarked'], titanic_df['Fare'],hue=titanic_df['Pclass'])
 plot.set_title('Boxplot of Fare in each Port')
 ```
 
-
-
-
-    <matplotlib.text.Text at 0x1240cb5d0>
-
-
 ![image-center](/assets/images/project1/output_10_1.png){: .align-center}
 
 
@@ -366,12 +360,6 @@ for data in titanic_df:
     titanic_df['Age'][np.isnan(titanic_df['Age'])] = null_age_random_list 
     titanic_df['Age'] = titanic_df['Age'].astype(int)
 ```
-
-    /Users/brendonhapp/anaconda/lib/python2.7/site-packages/ipykernel/__main__.py:7: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame
-    
-    See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
-
 
 ### Clean the Data
 
@@ -657,14 +645,7 @@ plot6.set_title('Total Passengers of Each Class')
 ```
 
 
-
-
-    <matplotlib.text.Text at 0x124747650>
-
-
-
-
-![png](output_23_1.png)
+![image-center](/assets/images/project1/output_23_1.png){: .align-center}
 
 
 Comparing survival rate to the total in each category is necessary to get an accurate view of how the data is distributed. Several conclusions from the resulting plots can be made:
@@ -702,15 +683,7 @@ plot8.set_title('Total of Parents/Children')
 
 ```
 
-
-
-
-    <matplotlib.text.Text at 0x124e02310>
-
-
-
-
-![png](output_25_1.png)
+![image-center](/assets/images/project1/output_25_1.png){: .align-center}
 
 
 It is difficult to draw conclusions from the data with family members since the values are so spread. From the Survival Rates, it looks like having some family members related to higher rates of survival. Although from the totals, there appear to be 600-700 lone travelers which is innacurate. This data is overlapping and falsely making it seem like the 0 column means a lone traveler which it may not. The best way to combat this is combine this data into a Family category.
@@ -738,15 +711,7 @@ plot10.set_xticklabels(["Alone","With Family"])
 plot10.set_title('Total Passengers With or Without Family')
 ```
 
-
-
-
-    <matplotlib.text.Text at 0x125324650>
-
-
-
-
-![png](output_27_1.png)
+![image-center](/assets/images/project1/output_27_1.png){: .align-center}
 
 
 The assumption that there was overlapping data was correct. There were not 600-700 lone passengers. There are actually closer to 500. By combining the family data, there can be definite conclusions:
@@ -779,14 +744,7 @@ plot7.set_title('Quantity of Survival/Death by Scaled Fare')
 ```
 
 
-
-
-    <matplotlib.text.Text at 0x125899bd0>
-
-
-
-
-![png](output_29_1.png)
+![image-center](/assets/images/project1/output_29_1.png){: .align-center}
 
 
 Viewing each factor against survival and deaths gives an idea of what the distribution of values looks like. These plots are shown based on survival only. Plotting these variables based on deaths created essentially the same graph but opposite bar heights and did not add more insight to the data set, so they were not inlcuded. For numerical values, deaths(red) and survival(green) can be better compared than with categories. Observing each variable, some conclusions can be made:
@@ -821,15 +779,7 @@ plot9.set_ylabel('Number of Passengers')
 plot9.set_title('Quantity of Survival/Death for Females')
 ```
 
-
-
-
-    <matplotlib.text.Text at 0x125f8d250>
-
-
-
-
-![png](output_31_1.png)
+![image-center](/assets/images/project1/output_31_1.png){: .align-center}
 
 
 Some conclusions can be made regarding the information found in these plots:
@@ -854,14 +804,7 @@ plot.set_title('Correlation of All Numeric Values')
 ```
 
 
-
-
-    <matplotlib.text.Text at 0x126729e50>
-
-
-
-
-![png](output_34_1.png)
+![image-center](/assets/images/project1/output_34_1.png){: .align-center}
 
 
 Darker colors show what variables may be useful to visualize. All factors in the survived column have already been shown above. Some other combinations also look promising:
@@ -884,14 +827,7 @@ plot.map(plt.hist, 'Age', bins=20).set_axis_labels('Age', 'Number of Passengers'
 ```
 
 
-
-
-    <seaborn.axisgrid.FacetGrid at 0x126f87d90>
-
-
-
-
-![png](output_37_1.png)
+![image-center](/assets/images/project1/output_37_1.png){: .align-center}
 
 
 Splitting by passenger class shows there are considerably more passengers traveling in third class. Some new information can be gathered and some assumptions made before can be confirmed:
@@ -921,8 +857,3 @@ Age was used even though there was a decent amount of missing values. This could
 
 #### Summary
 Based on the plots by age and by passenger class, it was clear that no matter what sex or class the children still had a high chance of survival. The Age plot split by sex also clearly showed that the majority of survivors were female. First class passengers also clearly had priority over other people. So it is safe to say that the women, children, and first class were most likely to survive 
-
-
-```python
-
-```
