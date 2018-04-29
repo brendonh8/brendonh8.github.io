@@ -4,7 +4,7 @@ date: 2018-01-01
 tags: [machine learning, data analysis]
 header:
     image: "/assets/images/cruise-ship-ferry-island-164180.jpg"
-excerpt: "Machine Learning, Enron, Analysis"
+excerpt: "Machine Learning, Titanic, Analysis"
 ---
 
 # Titianic Data Analysis Project
@@ -343,7 +343,7 @@ plot.set_title('Boxplot of Fare in each Port')
 
 
 
-
+{%include figure image_path='assets/images/project1/output_10_1.png'}
 ![png](output_10_1.png)
 
 
