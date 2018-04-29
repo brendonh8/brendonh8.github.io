@@ -844,7 +844,7 @@ Splitting by passenger class shows there are considerably more passengers travel
 ### Limitations
 The data that has been visualized is plenty to conclude our initial goal of discovering who was most likely to survive. However there are still many limiting factors in the analysis. Each numeric variable was correlated against each other. Just by looking at the values, this does not imply that one variable causes the other. For example:
 
-[There is some relation between age and passenger class. In the data set, older passengers tend to be in a higher class. However saying that the older someone is, the higher class they will be in, is false.]{: .notice}
+	There is some relation between age and passenger class. In the data set, older passengers tend to be in a higher class. However saying that the older someone is, the higher class they will be in, is false.{: .notice}
     
 The conclusions that were made by looking at the data focus on correlations. Exploring other information related to each variable, more concrete conclusions could be made. Using general knowledge about the Titanic and the results from the data, each variable that was compared could be logically considered to relate to each other.
 
