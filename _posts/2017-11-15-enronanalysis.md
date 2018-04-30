@@ -3,7 +3,7 @@ title: "Enron Fraud Prediction"
 date: 2017-07-10
 tags: [data science, python]
 header:
-    overlay_image: "/assets/images/office.jpg"
+    overlay_image: "/assets/images/money.jpg"
 excerpt: "Predicting employee fraud in the Enron Corporation using email and financial data"
 ---
 
