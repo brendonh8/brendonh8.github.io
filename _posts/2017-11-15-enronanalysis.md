@@ -7,22 +7,6 @@ header:
 excerpt: "Predicting employee fraud in the Enron Corporation using email and financial data"
 ---
 
-```python
-import math
-import sys
-import pickle
-import matplotlib.pyplot as plt
-import pandas as pd
-import numpy as np
-import pprint
-from feature_format import featureFormat, targetFeatureSplit
-sys.path.append("../tools/")
-
-with open("final_project_dataset.pkl", "r") as data_file:
-    data_dict = pickle.load(data_file)
-
-```
-
 ### Overview
 
 In 2000, a company named Enron was one of the largest companies in the United States. Based in Houston, they became one of the worlds major energy and commodoties companies. Corporate fraud spread throughout the company and eventually led to their downfall, causing them to collapse into bankruptcy in 2002. In the resulting Federal investigation, a significant amount of typically confidential information entered into the public record, including tens of thousands of emails and detailed financial data for top executives.
