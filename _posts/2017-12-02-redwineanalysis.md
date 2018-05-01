@@ -48,22 +48,22 @@ This data set contains information from 13 variables on 1,599 different types of
 
 The bulk of wines in this data set are medium quality. There is a steep drop of quality before 5 and a slightly more gradual decrease in quality after 5. Separating these values in groups will make it easier to analyse what causes a wine to be a certain quality. The groups will be low, average, high. 
 
-![image-center](/assets/images/wine/project/unnamed-chunk-4-1.png){: .align-center}
+![image-center](/assets/images/wineproject/unnamed-chunk-4-1.png){: .align-center}
 
 Separating the quality into categories shows a more clear distinction between high and low quality wines.
 
-![image-center](/assets/images/wine/project/unnamed-chunk-5-1.png){: .align-center}
+![image-center](/assets/images/wineproject/unnamed-chunk-5-1.png){: .align-center}
 
     ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
     ##    8.40    9.50   10.20   10.42   11.10   14.90
 
 Observing each count of the variables shows different distributions and trends. In order to draw statistical conclusions with the data, it is most useful to transform the data to a normal distribution.
 
-![image-center](/assets/images/wine/project/unnamed-chunk-6-1.png){: .align-center}
+![image-center](/assets/images/wineproject/unnamed-chunk-6-1.png){: .align-center}
 
 Sulphates has a slightly positively skewed distribution. Using a log10 transform shows a more normal distribution.
 
-![image-center](/assets/images/wine/project/unnamed-chunk-7-1.png)![image-center](/assets/images/wine/project/unnamed-chunk-7-2.png){: .align-center}
+![image-center](/assets/images/wineproject/unnamed-chunk-7-1.png)![image-center](/assets/images/wineproject/unnamed-chunk-7-2.png){: .align-center}
 
 Density and pH have normal distributions, no transform is needed. Density is dependent on alcohol and sugar content so these variables will be compared later in the project
 
