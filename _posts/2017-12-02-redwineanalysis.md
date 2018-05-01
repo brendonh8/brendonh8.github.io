@@ -63,7 +63,7 @@ Observing each count of the variables shows different distributions and trends. 
 
 Sulphates has a slightly positively skewed distribution. Using a log10 transform shows a more normal distribution.
 
-![image-center](/assets/images/wineproject/unnamed-chunk-7-1.png)![image-center](/assets/images/wineproject/unnamed-chunk-7-2.png){: .align-center}
+![image-center](/assets/images/wineproject/unnamed-chunk-7-1.png){: .align-center}![image[center]](/assets/images/wineproject/unnamed-chunk-7-2.png){: .align-center}
 
 Density and pH have normal distributions, no transform is needed. Density is dependent on alcohol and sugar content so these variables will be compared later in the project
 
