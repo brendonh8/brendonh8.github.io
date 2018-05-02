@@ -4,7 +4,7 @@ layout: archive
 title: "Data Analysis Projects Organized by Tools Used"
 author_profile: true
 header:
-    overlay_image: "/assets/images/wood.jpg"
+    overlay_image: "/assets/images/wall.jpg"
 ---
 
 {% include base_path %}
