@@ -1,10 +1,10 @@
 ---
 permalink: /data-analysis/
 layout: archive
-title: "Data Analysis Posts"
+title: "Data Analysis Projects Organized by Tools Used"
 author_profile: true
 header:
-    image: "/assets/images/america-buildings-city-37646.jpg"
+    overlay_image: "/assets/images/desktop.jpg"
 ---
 
 {% include base_path %}

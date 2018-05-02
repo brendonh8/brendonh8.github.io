@@ -1,7 +1,7 @@
 ---
 title: "OpenStreetMap Data Cleaning"
 date: 2017-07-10
-tags: [python, SQL]
+tags: [Python, SQL]
 header:
     overlay_image: "/assets/images/adventure-calm-clouds-414171.jpg"
 excerpt: "This project focuses on cleaning and querying user contributed map data of Denver, Colorado"
