@@ -67,15 +67,15 @@ Sulphates has a slightly positively skewed distribution. Using a log10 transform
 
 Density and pH have normal distributions, no transform is needed. Density is dependent on alcohol and sugar content so these variables will be compared later in the project
 
-![](redwine_eda_files/figure-markdown_github/unnamed-chunk-8-1.png)
+![image-center](/assets/images/wineproject/unnamed-chunk-8-1.png){: .align-center}
 
 Total sulfur dioxide is dependent of free sulfur dioxide. Applying a log10 transform shows a normal distribution. However, free sulfur dioxide appears to be somewhat bimodal
 
-![](redwine_eda_files/figure-markdown_github/unnamed-chunk-9-1.png)
+![image-center](/assets/images/wineproject/unnamed-chunk-9-1.png){: .align-center}
 
 Chlorides has some outliers at .6 which is causing a positive skew. A log10 transform shows a more normal distribution
 
-![](redwine_eda_files/figure-markdown_github/unnamed-chunk-10-1.png)![](redwine_eda_files/figure-markdown_github/unnamed-chunk-10-2.png)![](redwine_eda_files/figure-markdown_github/unnamed-chunk-10-3.png)
+![image-center](/assets/images/wineproject/unnamed-chunk-10-1.png){: .align-center}![image-center](/assets/images/wineproject/unnamed-chunk-10-2.png){: .align-center}![image-center](/assets/images/wineproject/unnamed-chunk-10-3.png){: .align-center}
 
 Citric acid has a decent amount of wines with an amount of 0. These values are still valid as wines are able to have no citric acid. Since this variable could have an effect on others, values of 0 will be kept in the data
 
@@ -130,7 +130,9 @@ Bivariate Plots Section
     ##            sulphates              alcohol 
     ##           0.25139708           0.47616632
 
-Observing each of the factors correlation to quality shows that no single attribute of wine has a clear effect on the quality. This could be due to a large quantity of wines being average. Making a high quality wine looks to be a mix of multiple different attributes with no dominating factor. Taking a closer look at the four highest correlated attributes could lead to some conclusions ![](redwine_eda_files/figure-markdown_github/unnamed-chunk-12-1.png)
+Observing each of the factors correlation to quality shows that no single attribute of wine has a clear effect on the quality. This could be due to a large quantity of wines being average. Making a high quality wine looks to be a mix of multiple different attributes with no dominating factor. Taking a closer look at the four highest correlated attributes could lead to some conclusions 
+
+![image-center](/assets/images/wineproject/unnamed-chunk-12-1.png){: .align-center}
 
 The stronget correlation so far appears to be between citric acid and volatile acidity. There also appears to be some correlation with sulphates and citric acid. Lets see how each of these variables effect the quality of wine separately ![](redwine_eda_files/figure-markdown_github/unnamed-chunk-13-1.png)
 
@@ -138,15 +140,15 @@ Observing the counts in each quality group for the wine, it is clear that high q
 
 This is a somewhat mixed result. However the bulk of high quality wines have a higher amount of citric acid and lower quality has less, some even none. Citric acid could be a factor in high quality wine, although the largest outlier is also a low quality wine. Having no citric acid does not mean a wine cannot be high quality either
 
-![](redwine_eda_files/figure-markdown_github/unnamed-chunk-15-1.png)
+![image-center](/assets/images/wineproject/unnamed-chunk-15-1.png){: .align-center}
 
 Overall it looks like having more sulphates could lead to higher quality wines. Once again there is also a low quality outlier. Sulphates are used as a preservative in wine and they are naturally produced by yeast during fermentation so all wines typically have them
 
-![](redwine_eda_files/figure-markdown_github/unnamed-chunk-16-1.png)
+![image-center](/assets/images/wineproject/unnamed-chunk-16-1.png){: .align-center}
 
 It is clear that a higher alcohol content is associated with higher quality wines. Although these wine attributes correlate with the main feature, quality, there may be stronger correlations between other attributes. From the correlation matrix above, it shows that citric acid and volatile acidity are negatively correlated (-.559), but what about fixed acidity?
 
-![](redwine_eda_files/figure-markdown_github/unnamed-chunk-17-1.png)
+![image-center](/assets/images/wineproject/unnamed-chunk-17-1.png){: .align-center}
 
     ## 
     ##  Pearson's product-moment correlation
@@ -162,7 +164,7 @@ It is clear that a higher alcohol content is associated with higher quality wine
 
 This positive relationship would make sense when you understand what each variable is. Fixed acids in wine are acids that do not evaporate easily. The predominant fixed acids in wines are tartaric, malic, citric, and succic. So it would make sense that citric acid is positively correlated with tartaric acid (the specific acid that fixed acidity was measured from). Fixed acids in wine contribute a lot to the tase. However, correlation with quality is fairly low. This is due to high quality wines having a very specific amount of fixed acids. Too little and the wine will be flat, too much and the wine will taste sour.
 
-![](redwine_eda_files/figure-markdown_github/unnamed-chunk-18-1.png)
+![image-center](/assets/images/wineproject/unnamed-chunk-18-1.png){: .align-center}
 
     ## 
     ##  Pearson's product-moment correlation
@@ -178,7 +180,7 @@ This positive relationship would make sense when you understand what each variab
 
 Knowing that fixed acidity is acids that do not evaporate readily, it would be expected that more dense wines have more fixed acids.
 
-![](redwine_eda_files/figure-markdown_github/unnamed-chunk-19-1.png)
+![image-center](/assets/images/wineproject/unnamed-chunk-19-1.png){: .align-center}
 
     ## 
     ##  Pearson's product-moment correlation
@@ -224,27 +226,27 @@ The strongest relationship was between fixed acidity and pH with an r2 value of 
 Multivariate Plots Section
 ==========================
 
-![](redwine_eda_files/figure-markdown_github/unnamed-chunk-20-1.png)
+![image-center](/assets/images/wineproject/unnamed-chunk-20-1.png){: .align-center}
 
 Alcohol content is the highest correlated to quality. This boxplot clearly shows that high quality wines typically have higher alcohol content
 
-![](redwine_eda_files/figure-markdown_github/unnamed-chunk-21-1.png)
+![image-center](/assets/images/wineproject/unnamed-chunk-21-1.png){: .align-center}
 
 All quality wines are fairly close on the scale however it looks like high quality wines typically have more citric acid and tartaric acid
 
-![](redwine_eda_files/figure-markdown_github/unnamed-chunk-22-1.png)
+![image-center](/assets/images/wineproject/unnamed-chunk-22-1.png){: .align-center}
 
 Average and low quality wines dont have a clear difference here. However, high quality wines have a clear separation being less dense with the same fixed acidity, and more fixed acids for the same density
 
-![](redwine_eda_files/figure-markdown_github/unnamed-chunk-23-1.png)
+![image-center](/assets/images/wineproject/unnamed-chunk-23-1.png){: .align-center}
 
 High quality wines usually have less volatile acidity. There is also on average more fixed acidity which follows the past plots
 
-![](redwine_eda_files/figure-markdown_github/unnamed-chunk-24-1.png)
+![image-center](/assets/images/wineproject/unnamed-chunk-24-1.png){: .align-center}
 
 Once again, high quality wines have a higher fixed acidity. That would mean they are more acidic which is clear from this graph
 
-![](redwine_eda_files/figure-markdown_github/unnamed-chunk-25-1.png)
+![image-center](/assets/images/wineproject/unnamed-chunk-25-1.png){: .align-center}
 
 Fixed acidity and alcohol have had an impact on quality in past plots. Here it can clearly be seen that higher quantities of both relate to high quality wines.
 
@@ -269,7 +271,7 @@ Final Plots and Summary
 Plot One
 --------
 
-![](redwine_eda_files/figure-markdown_github/unnamed-chunk-26-1.png)
+![image-center](/assets/images/wineproject/unnamed-chunk-26-1.png){: .align-center}
 
 Description One
 ---------------
@@ -279,7 +281,7 @@ Many factors have to do with making a high quality wine. Out of all attributes, 
 Plot Two
 --------
 
-![](redwine_eda_files/figure-markdown_github/unnamed-chunk-27-1.png)
+![image-center](/assets/images/wineproject/unnamed-chunk-27-1.png){: .align-center}
 
 Description Two
 ---------------
@@ -289,7 +291,7 @@ Earlier plots showed that fixed acids could cause a wine to be more dense due to
 Plot Three
 ----------
 
-![](redwine_eda_files/figure-markdown_github/unnamed-chunk-28-1.png)
+![image-center](/assets/images/wineproject/unnamed-chunk-28-1.png){: .align-center}
 
 Description Three
 -----------------
