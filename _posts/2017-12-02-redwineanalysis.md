@@ -1,7 +1,7 @@
 ---
 title: "Analysis of Red Wine Characteristics"
 date: 2017-06-05
-tags: [R, data analysis]
+tags: [R]
 header:
     overlay_image: "/assets/images/redwine.jpg"
 excerpt: "The effect of chemical characteristics on red wine quality"

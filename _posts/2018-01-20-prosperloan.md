@@ -1,7 +1,7 @@
 ---
 title: "Analysis of Prosper Loan Data"
 date: 2018-01-20
-tags: [data analysis, Tableau]
+tags: [Tableau]
 header:
     overlay_image: "/assets/images/building.jpg"
 excerpt: "Analyzing various aspects of Prosper lending data using Tableau"
