@@ -7,7 +7,12 @@ header:
 excerpt: "The effect of chemical characteristics on red wine quality"
 ---
 
-This report explores a data set containing qualitites and attributes of 1,600 red wines
+What makes a wine high quality has always been a mystery to me. Staring at the wine shelf can be daunting and I usually find myself picking the one with the nicest label. It just goes to show how important marketing is to the average person. So what exactly makes these wines high quality. Sometimes I can't tell the difference between a $12 bottle and a $30 bottle. I decided to delve into the chemical makeup of wines to gain an understanding since all I knew before this was that wines can have legs.
+
+The dataset of characteristics of red wine I used can be found [here](https://s3.amazonaws.com/udacity-hosted-downloads/ud651/wineQualityReds.csv)
+
+
+This data set contained 1,599 variants of a Portuguese "Vinho Verde" wine. The main focus in this data set was the quality of the wine with 0 being poor and 10 being great quality. In order to understand how each feature effects quality, it was necessary to see how each feature is effected by each other. It was first necessary to understand what each of the qualities of wine were typically used for. Using a University of Californias lab study (<http://waterhouse.ucdavis.edu/whats-in-wine>) made it easier to obtain some domain knowledge and have a grasp of what each variable was.
 
     ##        X          fixed.acidity   volatile.acidity  citric.acid   
     ##  Min.   :   1.0   Min.   : 4.60   Min.   :0.1200   Min.   :0.000  
@@ -16,6 +21,7 @@ This report explores a data set containing qualitites and attributes of 1,600 re
     ##  Mean   : 800.0   Mean   : 8.32   Mean   :0.5278   Mean   :0.271  
     ##  3rd Qu.:1199.5   3rd Qu.: 9.20   3rd Qu.:0.6400   3rd Qu.:0.420  
     ##  Max.   :1599.0   Max.   :15.90   Max.   :1.5800   Max.   :1.000  
+
     ##  residual.sugar     chlorides       free.sulfur.dioxide
     ##  Min.   : 0.900   Min.   :0.01200   Min.   : 1.00      
     ##  1st Qu.: 1.900   1st Qu.:0.07000   1st Qu.: 7.00      
@@ -23,6 +29,7 @@ This report explores a data set containing qualitites and attributes of 1,600 re
     ##  Mean   : 2.539   Mean   :0.08747   Mean   :15.87      
     ##  3rd Qu.: 2.600   3rd Qu.:0.09000   3rd Qu.:21.00      
     ##  Max.   :15.500   Max.   :0.61100   Max.   :72.00      
+
     ##  total.sulfur.dioxide    density             pH          sulphates     
     ##  Min.   :  6.00       Min.   :0.9901   Min.   :2.740   Min.   :0.3300  
     ##  1st Qu.: 22.00       1st Qu.:0.9956   1st Qu.:3.210   1st Qu.:0.5500  
@@ -30,6 +37,7 @@ This report explores a data set containing qualitites and attributes of 1,600 re
     ##  Mean   : 46.47       Mean   :0.9967   Mean   :3.311   Mean   :0.6581  
     ##  3rd Qu.: 62.00       3rd Qu.:0.9978   3rd Qu.:3.400   3rd Qu.:0.7300  
     ##  Max.   :289.00       Max.   :1.0037   Max.   :4.010   Max.   :2.0000  
+
     ##     alcohol         quality     
     ##  Min.   : 8.40   Min.   :3.000  
     ##  1st Qu.: 9.50   1st Qu.:5.000  
@@ -300,8 +308,6 @@ Fixed acids are a main contributor to the taste of wines, and alcohol content ha
 
 Reflection
 ==========
-
-This data set contained 1,599 variants of a Portuguese "Vinho Verde" wine. The main focus in this data set was the quality of the wine with 0 being poor and 10 being great quality. In order to understand how each feature effects quality, it was necessary to see how each feature is effected by each other. It was first necessary to understand what each of the qualities of wine were typically used for. Using a University of Californias lab study (<http://waterhouse.ucdavis.edu/whats-in-wine>) made it easier to obtain some domain knowledge and have a grasp of what each variable was.
 
 The features volatile acidity, citric acid, sulphates, and alcohol had the strongest correlation with quality. My main focus was with the fixed acids and alcohol. I decided not to focus on volatile acidity as it has more to do with spoilage. Fixed acidity appeared to be a more interesting attribute as it was more of an effect on the taste of wine. Alcohol content was also a focus since the correlation to quality was so high (.476). It is difficult to pinpoint what makes a high quality wine since it could be a very specific mix of different variables. Although, alcohol and fixed acidity showed a clear separation between high and low quality wines.
 
