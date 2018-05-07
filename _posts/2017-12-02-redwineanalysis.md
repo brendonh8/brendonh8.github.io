@@ -16,7 +16,7 @@ This data set contained 1,599 variants of a Portuguese "Vinho Verde" wine. The m
 
 A quick summary of the data will give an idea of the range of each variable:
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```r
 summary(redwineinfo)
 ```
 
