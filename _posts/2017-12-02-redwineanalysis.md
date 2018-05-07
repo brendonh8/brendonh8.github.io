@@ -57,7 +57,7 @@ Univariate Plots Section
 
 This data set contains information from 13 variables on 1,599 different types of wine. The quality of the wine is scored from 0 (worst) to 10 (best). However the actual values only range from 3 to 8.
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```r
 ggplot(redwineinfo, aes(x = as.factor(quality))) +
   geom_histogram(stat = "count", color = 'black', fill = 'red') +
   scale_x_discrete(breaks = seq(0, 10))
@@ -67,7 +67,7 @@ ggplot(redwineinfo, aes(x = as.factor(quality))) +
 
 The bulk of wines in this data set are medium quality. There is a steep drop of quality before 5 and a slightly more gradual decrease in quality after 5. Separating these values in groups will make it easier to analyse what causes a wine to be a certain quality. The groups will be low, average, high. 
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```r
 redwineinfo$rating <-ifelse(redwineinfo$quality <= 4, 'Low', 
                             ifelse(redwineinfo$quality <= 6, 'Average', 'High'))
 
@@ -82,7 +82,7 @@ ggplot(redwineinfo, aes(x = as.factor(rating))) +
 
 Separating the quality into categories shows a more clear distinction between high and low quality wines.
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```r
 ggplot(redwineinfo, aes(x = alcohol)) +
   geom_histogram(binwidth = .1, color = 'black', fill = 'red3') +
   scale_x_continuous(breaks = seq(1, 20, .5))
@@ -97,7 +97,7 @@ summary(redwineinfo$alcohol)
 
 Observing each count of the variables shows different distributions and trends. In order to draw statistical conclusions with the data, it is most useful to transform the data to a normal distribution.
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```r
 p1 <- ggplot(redwineinfo, aes(x = sulphates)) +
   geom_histogram(color = 'black', fill = 'orange')
 p2 <- p1 + scale_x_log10() 
@@ -110,7 +110,7 @@ grid.arrange(p1, p2, ncol = 2)
 
 Sulphates has a slightly positively skewed distribution. Using a log10 transform shows a more normal distribution.
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```r
 ggplot(redwineinfo, aes(x = pH)) +
   geom_histogram(binwidth = .05, color = 'black', fill = 'orange3') +
   scale_x_continuous(breaks = seq(2, 5, .1))
@@ -124,7 +124,7 @@ ggplot(redwineinfo, aes(x = density)) +
 
 Density and pH have normal distributions, no transform is needed. Density is dependent on alcohol and sugar content so these variables will be compared later in the project
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```r
 p1 <- ggplot(redwineinfo, aes(x = total.sulfur.dioxide)) +
   geom_histogram(color = 'black', fill = 'purple3') 
 p2 <- p1 + scale_x_log10()
@@ -140,7 +140,7 @@ grid.arrange(p1, p2, p3, p4, ncol = 2)
 
 Total sulfur dioxide is dependent of free sulfur dioxide. Applying a log10 transform shows a normal distribution. However, free sulfur dioxide appears to be somewhat bimodal
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```r
 p1 <- ggplot(redwineinfo, aes(x = chlorides)) +
   geom_histogram(color = 'black', fill = 'yellow3')
 p2 <- p1 + scale_x_log10()
@@ -152,7 +152,7 @@ grid.arrange(p1, p2, ncol = 1)
 
 Chlorides has some outliers at .6 which is causing a positive skew. A log10 transform shows a more normal distribution
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```r
 p1 <- ggplot(redwineinfo, aes(x = residual.sugar)) +
   geom_histogram(color = 'black', fill = 'blue')
 p2 <- p1 + scale_x_log10()
@@ -197,7 +197,7 @@ I used a log10 transform on any data that was positively skewed to obtain a more
 Bivariate Plots Section
 =======================
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```r
 # Test correlations
 corTest <- function(x, y){
   return(cor.test(x, y)$estimate)
@@ -235,7 +235,7 @@ sort(corList)
 
 Observing each of the factors correlation to quality shows that no single attribute of wine has a clear effect on the quality. This could be due to a large quantity of wines being average. Making a high quality wine looks to be a mix of multiple different attributes with no dominating factor. Taking a closer look at the four highest correlated attributes could lead to some conclusions 
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```r
 theme_set(theme_minimal(10))
 set.seed(1345)
 wine_subset <- redwineinfo[c('volatile.acidity','citric.acid',
@@ -256,7 +256,7 @@ ggpairs(data = wine_samp,
 
 The stronget correlation so far appears to be between citric acid and volatile acidity. There also appears to be some correlation with sulphates and citric acid. Lets see how each of these variables effect the quality of wine separately 
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```r
 theme_set(theme_minimal(10))
 
 plt1 <- ggplot(data = redwineinfo, aes(x=volatile.acidity, fill = rating)) + 
@@ -269,7 +269,7 @@ print(plt1)
 
 Observing the counts in each quality group for the wine, it is clear that high quality wines tend to have less volatile acidity. Wine spoilage is defined by the volatile acidity, which in large quantities gives the taste of vinegar. Low amounts are kept in high quality wines to keep a complex taste 
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```r
 plt1 <- ggplot(data = redwineinfo, aes(x=citric.acid, fill = rating)) + 
   geom_histogram(binwidth = .02, position = position_stack(reverse = TRUE))
 print(plt1)
@@ -279,7 +279,7 @@ print(plt1)
 
 This is a somewhat mixed result. However the bulk of high quality wines have a higher amount of citric acid and lower quality has less, some even none. Citric acid could be a factor in high quality wine, although the largest outlier is also a low quality wine. Having no citric acid does not mean a wine cannot be high quality either
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```r
 plt1 <- ggplot(data = redwineinfo, aes(x=sulphates, fill = rating)) + 
   geom_histogram(binwidth = .02, position = position_stack(reverse = TRUE))
 print(plt1)
@@ -289,7 +289,7 @@ print(plt1)
 
 Overall it looks like having more sulphates could lead to higher quality wines. Once again there is also a low quality outlier. Sulphates are used as a preservative in wine and they are naturally produced by yeast during fermentation so all wines typically have them
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```r
 plt1 <- ggplot(data = redwineinfo, aes(x=alcohol, fill = rating)) + 
   geom_histogram(binwidth = .2, position = position_stack(reverse = TRUE))
 print(plt1)
@@ -299,7 +299,7 @@ print(plt1)
 
 It is clear that a higher alcohol content is associated with higher quality wines. Although these wine attributes correlate with the main feature, quality, there may be stronger correlations between other attributes. From the correlation matrix above, it shows that citric acid and volatile acidity are negatively correlated (-.559), but what about fixed acidity?
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```r
 ggplot(data = redwineinfo, aes(x=citric.acid, y=fixed.acidity)) + 
   geom_point(alpha = .5) + geom_smooth(method = 'lm')
 
@@ -323,7 +323,7 @@ cor.test(redwineinfo$citric.acid, redwineinfo$fixed.acidity,
 
 This positive relationship would make sense when you understand what each variable is. Fixed acids in wine are acids that do not evaporate easily. The predominant fixed acids in wines are tartaric, malic, citric, and succic. So it would make sense that citric acid is positively correlated with tartaric acid (the specific acid that fixed acidity was measured from). Fixed acids in wine contribute a lot to the tase. However, correlation with quality is fairly low. This is due to high quality wines having a very specific amount of fixed acids. Too little and the wine will be flat, too much and the wine will taste sour.
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```r
 ggplot(data = redwineinfo, aes(x=density, y=fixed.acidity)) + 
   geom_point(alpha = .5) + 
   geom_smooth(method = 'lm')
@@ -348,7 +348,7 @@ cor.test(redwineinfo$density, redwineinfo$fixed.acidity,
 
 Knowing that fixed acidity is acids that do not evaporate readily, it would be expected that more dense wines have more fixed acids.
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```r
 ggplot(data = redwineinfo, aes(x=pH, y=fixed.acidity)) + 
   geom_point(alpha = .5) + 
   geom_smooth(method = 'lm')
@@ -388,7 +388,7 @@ The strongest relationship was between fixed acidity and pH with an r2 value of 
 Multivariate Plots Section
 ==========================
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```r
 ggplot(data = redwineinfo, aes(x=as.factor(quality), y=alcohol)) + 
   geom_jitter(aes(color=rating)) + 
   geom_boxplot(outlier.shape = NA, alpha = .5) + 
@@ -400,7 +400,7 @@ ggplot(data = redwineinfo, aes(x=as.factor(quality), y=alcohol)) +
 
 Alcohol content is the highest correlated to quality. This boxplot clearly shows that high quality wines typically have higher alcohol content
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```r
 
 ggplot(data = redwineinfo, aes(x=citric.acid, y=fixed.acidity, 
                                color = rating)) + geom_point() + 
@@ -412,7 +412,7 @@ ggplot(data = redwineinfo, aes(x=citric.acid, y=fixed.acidity,
 
 All quality wines are fairly close on the scale however it looks like high quality wines typically have more citric acid and tartaric acid
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```r
 
 ggplot(data = redwineinfo, aes(x=density, y=fixed.acidity, color = rating)) + 
   geom_point() + geom_smooth(method = 'lm')
@@ -423,7 +423,7 @@ ggplot(data = redwineinfo, aes(x=density, y=fixed.acidity, color = rating)) +
 
 Average and low quality wines dont have a clear difference here. However, high quality wines have a clear separation being less dense with the same fixed acidity, and more fixed acids for the same density
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```r
 
 ggplot(data = redwineinfo, aes(x=volatile.acidity, y=fixed.acidity, 
                                color = rating)) + geom_point() + 
@@ -435,7 +435,7 @@ ggplot(data = redwineinfo, aes(x=volatile.acidity, y=fixed.acidity,
 
 High quality wines usually have less volatile acidity. There is also on average more fixed acidity which follows the past plots
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```r
 
 ggplot(data = redwineinfo, aes(x=pH, y=fixed.acidity, color = rating)) + 
   geom_point() + geom_smooth(method = 'lm')
@@ -446,7 +446,7 @@ ggplot(data = redwineinfo, aes(x=pH, y=fixed.acidity, color = rating)) +
 
 Once again, high quality wines have a higher fixed acidity. That would mean they are more acidic which is clear from this graph
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```r
 
 ggplot(data = redwineinfo, aes(x=alcohol, y=fixed.acidity, color = rating)) + 
   geom_point() + geom_smooth(method = 'lm')
@@ -470,7 +470,7 @@ Final Plots and Summary
 Plot One
 --------
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```r
 ggplot(data = redwineinfo, aes(x=as.factor(quality), y=alcohol)) + 
   geom_jitter(aes(color=rating)) + 
   geom_boxplot(outlier.shape = NA, alpha = .5) + 
@@ -488,7 +488,7 @@ Many factors have to do with making a high quality wine. Out of all attributes, 
 Plot Two
 --------
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```r
 
 ggplot(data = redwineinfo, aes(x=density, y=fixed.acidity, color = rating)) + 
   geom_point() + geom_smooth(method = 'lm') + 
@@ -506,7 +506,7 @@ Earlier plots showed that fixed acids could cause a wine to be more dense due to
 Plot Three
 ----------
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```r
 
 ggplot(data = redwineinfo, aes(x=alcohol, y=fixed.acidity, color = rating)) + 
   geom_point() + geom_smooth(method = 'lm') + 
