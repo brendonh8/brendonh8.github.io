@@ -11,7 +11,8 @@ excerpt: "Predicting employee fraud in the Enron Corporation using email and fin
 
 In 2000, a company named Enron was one of the largest companies in the United States. Based in Houston, they became one of the worlds major energy and commodoties companies. Corporate fraud spread throughout the company and eventually led to their downfall, causing them to collapse into bankruptcy in 2002. In the resulting Federal investigation, a significant amount of typically confidential information entered into the public record, including tens of thousands of emails and detailed financial data for top executives.
 
->Summarize for us the goal of this project and how machine learning is useful in trying to accomplish it. As part of your answer, give some background on the dataset and how it can be used to answer the project question. Were there any outliers in the data when you got it, and how did you handle those?
+Project Goal
+------------
 
 The goal of this project is to use that financial and email data that was made available to determine if an employee has committed fraud. These people will be known as POI's(persons of interest). This means they are in one of the following categories: indicted, settled or plea deal with the government, or testified in exchange for prosecution immunity.
 
@@ -86,8 +87,6 @@ plt.show()
 
 ## Feature Selection
 
->What features did you end up using in your POI identifier, and what selection process did you use to pick them? Did you have to do any scaling? Why or why not? As part of the assignment, you should attempt to engineer your own feature that does not come ready-made in the dataset -- explain what feature you tried to make, and the rationale behind it. 
-
 Before deciding which features to use, I created some new ones that may help to identify POI's. These features relate some factors that I think may have an impact on the model. 
 
 **ratio_from_poi**: from_poi_to_this_person/to_messages
@@ -140,8 +139,6 @@ The rest of the algorithms I used are graphical-model based and invariant to fea
 
 ## Feature Testing
 
->What algorithm did you end up using? What other one(s) did you try? How did model performance differ between algorithms?
-
 I decided to test the impact that my new features made with four different algorithms; Naive Bayes, Support Vector Machine, Decision Tree, and Random Forest. The results of these tests are:
 
 |**Algorithm**|**Precision**|**Recall**|**Precision**|**Recall**|
@@ -156,8 +153,6 @@ I decided to test the impact that my new features made with four different algor
 Ultimately, I decided to use Decision Tree as my final algorithm to tune and be used in testing as it preformed the best out of all once I added my new feature in. 
 
 ## Algorithm Tuning
-
->What does it mean to tune the parameters of an algorithm, and what can happen if you don’t do this well?  How did you tune the parameters of your particular algorithm? What parameters did you tune?
 
 Algorithms in sklearn come with different sets of multiple parameters. These are not required to set, however it can be benefitial for the algorithms performance to find the optimal parameter settings. I utilized sklearns GridSearchCV to do an exhaustive search over a range of parameter values to select the best performing settings. I used a function to tune the algorithm with the given parameters over a set of 50 iterations. The function then gave me the average precision and recall for all the iterations, as well as the best parameters. 
 
@@ -188,8 +183,6 @@ It turns out that the best parameters were all the default values except for spl
 
 ## Validation
 
->What is validation, and what’s a classic mistake you can make if you do it wrong? How did you validate your analysis?
-
 Validation is the process where the trained model is run using data that it hasn't seen before. The most important part of validation is to make sure the training and testing data is separate. If the model is tested on the same data it was trained on, it will result in overfitting and appear to perform better than it actually does. 
 
 It is also important to make sure the training and testing splits are selected at random. If the data happens to be sorted and just split in half, either the training or testing set would end up having no POI's.
@@ -197,8 +190,6 @@ It is also important to make sure the training and testing splits are selected a
 I used the train_test_split cross validation function to validate this dataset. This function randomized the data used and separated 30% of the data to be used for testing. 
 
 ## Evaluation Metrics
-
->Give at least 2 evaluation metrics and your average performance for each of them.  Explain an interpretation of your metrics that says something human-understandable about your algorithm’s performance.
 
 An evaluation metric is needed to be able to tell how well the algorithm performs. **Accuracy** is one of the more common metrics. However, accuracy depends on the data being balanced. The Enron dataset has a much lower POI count than it does for non POI's. Looking at the equation for Accuracy:
 
