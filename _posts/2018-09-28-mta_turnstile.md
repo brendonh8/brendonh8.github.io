@@ -13,7 +13,7 @@ For my first project at Metis, my teams goal was to utilize MTA turnstile data t
 
 The data that we utilised for this project can be found at the [MTA's website](http://web.mta.info/developers/turnstile.html). The files for their turnstile data are located in multiple different links. To make it easier to grab all the data, I wrote a quick script that used Beautiful Soup to grab the link urls and download the first couple of 2018 to work with.
 
-'''python
+```python
 # get the page with all turnstile links
 resp = requests.get('http://web.mta.info/developers/turnstile.html')
 soup = BeautifulSoup(resp.text, 'lxml')
@@ -37,7 +37,7 @@ for url in url_2018[:5]:
         df_import = df_import.append(pd.read_csv(str(url)))
         print("Downloaded " + url + " from MTA website")
     i += 1
-'''
+```
 
 The MTA's data isn't the easiest to understand once you first look at it. The data the MTA collected reflects the condition of their subway system. If you aren't from NYC, it is not great. Overall there are 11 different fields they collect data for. These can be summarised below:
 
