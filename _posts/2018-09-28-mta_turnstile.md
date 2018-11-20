@@ -40,4 +40,3 @@ for url in url_2018[:5]:
 ```
 
 The MTA's data isn't the easiest to understand once you first look at it. The data the MTA collected reflects the condition of their subway system. If you aren't from NYC, it is not great. Overall there are 11 different fields they collect data for. These can be summarised below:
-
