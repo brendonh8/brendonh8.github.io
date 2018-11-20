@@ -39,4 +39,17 @@ for url in url_2018[:5]:
     i += 1
 ```
 
-The MTA's data isn't the easiest to understand once you first look at it. The data the MTA collected reflects the condition of their subway system. If you aren't from NYC, it is not great. Overall there are 11 different fields they collect data for. These can be summarised below:
+The MTA's data isn't the easiest to understand once you first look at it. The data the MTA collected reflects the condition of their subway system. If you aren't from NYC, it is not great. Overall there are 11 different fields they collect data for. The focused features of this project can be seen below:
+
+![image-center](/assets/images/mtaproject/initial_df.png)
+
+- **C/A**: The control area for the turnstiles. Each station was broken up into separate groups of control areas.
+- **Unit**: 
+- **SCP**:
+- **Station**:
+- **Exits**:
+- **Entries**:
+- **Prev_entries**:
+- **Prev_exits**:
+- **Daily_entries**:
+- **Daily_exits**:
