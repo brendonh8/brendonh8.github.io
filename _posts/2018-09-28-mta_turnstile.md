@@ -43,13 +43,14 @@ The MTA's data isn't the easiest to understand once you first look at it. The da
 
 ![image-center](/assets/images/mtaproject/initial_df.png)
 
-- **C/A**: The control area for the turnstiles. Each station was broken up into separate groups of control areas.
-- **Unit**: 
-- **SCP**:
-- **Station**:
-- **Exits**:
-- **Entries**:
-- **Prev_entries**:
-- **Prev_exits**:
-- **Daily_entries**:
-- **Daily_exits**:
+- **C/A**: The control area/booth name for the booth at a given station. Each station could have multiple C/A's.
+- **Unit**: The remote unit ID of a station.
+- **SCP**: Subunit/Channel/Position. This is the specific address for any given turnstile.
+- **Station**: The name that was assigned to a subway station by operations planning.
+- **Linename**: A string that contains all the train lines stopping at that subway.
+- **Division**: The line that the station originally belonged to.
+- **Date**: The date that the data was audited.
+- **Time**: The time that data was recorded is in increments of four hours. These times can be staggered to prevent an overload of audit readings to the system.
+- **Desc**: Description of the audit event. Can be "REGULAR" for normal times or "RECOVR AUD" if an audit was missed and recovered.
+- **Entries**: A cumulative entry value for each turnstile. This is measured since the inception of the device. The memory of the turnstile is sometimes deleted or counts backwards from roll over or replacement.
+- **Exits**: A cumulative exit value for each turnstile. Contains similar issues to the entries.
