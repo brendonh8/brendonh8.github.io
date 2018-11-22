@@ -78,4 +78,4 @@ Times Square is one of the top visited stations in NYC. The trends each week mak
 
 ![image-center](/assets/images/mtaproject/days_of_week.png)
 
-## <a name="heading-3"></a>Results
+## <a name="heading-4"></a>Results
