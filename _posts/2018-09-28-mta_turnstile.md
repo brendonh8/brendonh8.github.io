@@ -14,7 +14,7 @@ excerpt: "Optimizing Citymapper routes using MTA turnstile data"
 
 - [EDA](#heading-3)
 
-- [Results](#heading-4)
+- [Calculations/Findings](#heading-4)
 
 ## <a name="heading-1"></a>Overview
 
@@ -78,4 +78,8 @@ Times Square is one of the top visited stations in NYC. The trends each week mak
 
 ![image-center](/assets/images/mtaproject/days_of_week.png)
 
-## <a name="heading-4"></a>Results
+## <a name="heading-4"></a>Calculations/Findings
+
+Looking at each control area would give us an idea of the traffic going through specific subway entrances. In order to determine which entrance would be best, we needed to create a metric that would allow us to rate how busy the control areas in each station were. 
+
+$$\Rating=10000*(\frac{\frac{Entries}{Exits}^2}{Entries}$$
