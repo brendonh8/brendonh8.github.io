@@ -82,4 +82,4 @@ Times Square is one of the top visited stations in NYC. The trends each week mak
 
 Looking at each control area would give us an idea of the traffic going through specific subway entrances. In order to determine which entrance would be best, we needed to create a metric that would allow us to rate how busy the control areas in each station were. 
 
-$$\Rating=10000*(\frac{\frac{Entries}{Exits}^2}{Entries}$$
+$$Rating=10000*\frac{\frac{Entries}{Exits}^2}{Entries}$$
