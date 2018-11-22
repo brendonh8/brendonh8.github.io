@@ -14,6 +14,8 @@ excerpt: "Optimizing Citymapper routes using MTA turnstile data"
 
 - [EDA](#heading-3)
 
+- [Results](#heading-4)
+
 ## <a name="heading-1"></a>Overview
 
 The New York City subway system is a notoriously busy part of everyone's commute. Living in NYC has given me first hand experience of this. The biggest pressure point of commuting for me is getting stuck going in and out of the station. While it can only be for a couple minutes, those minutes drag on forever as I get sandwiched between people going both directions. This issue is the main focus of this post.
@@ -67,3 +69,13 @@ The MTA's data isn't the easiest to understand once you first look at it. The da
 - **Exits**: A **cumulative exit value** for each turnstile. Contains similar issues to the entries.
 
 ## <a name="heading-3"></a>EDA
+
+After filtering out and organizing the many glitches that occur in the entry and exit counts, I had the entry and exit counts for each day that I could plot to get an idea of trends in the data. The daily entries show clear trends of weekday and weekend trips.
+
+![image-center](/assets/images/mtaproject/times_sq_entries.png)
+
+Times Square is one of the top visited stations in NYC. The trends each week make sense showing the flow of traffic on weekdays and weekends. The most useful times that would see the largest benefit of optimizing subway traffic would be during the week.
+
+![image-center](/assets/images/mtaproject/days_of_week.png)
+
+## <a name="heading-3"></a>Results
