@@ -83,3 +83,7 @@ Times Square is one of the top visited stations in NYC. The trends each week mak
 Looking at each control area would give us an idea of the traffic going through specific subway entrances. In order to determine which entrance would be best, we needed to create a metric that would allow us to rate how busy the control areas in each station were. 
 
 ![image-center](http://latex.codecogs.com/gif.latex?Rating%3D10000*%5Cfrac%7B%5Cfrac%7BEntries%7D%7BExits%7D%5E2%7D%7BEntries%7D)
+
+This formula we made will weigh stations with more entrances than exits as a lower rating. A better station to enter would be one that has less traffic coming out of it since it is easier to move with the flow of people than against them. This formula proved useful in uncovering the best stations to enter. The plots below show the distribution of entries to exits in Grand Central as well as how our formula rated each of the entrances.
+
+![image-left](/assets/images/mtaproject/distribution.png)![image-right](/assets/images/mtaproject/grand_rating.png)
