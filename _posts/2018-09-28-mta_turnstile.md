@@ -86,4 +86,5 @@ Looking at each control area would give us an idea of the traffic going through 
 
 This formula we made will weigh stations with more entrances than exits as a lower rating. A better station to enter would be one that has less traffic coming out of it since it is easier to move with the flow of people than against them. This formula proved useful in uncovering the best stations to enter. The plots below show the distribution of entries to exits in Grand Central as well as how our formula rated each of the entrances.
 
-<img src="/assets/images/mtaproject/distribution.png" width="425"/> <img src="/assets/images/mtaproject/grand_rating.png" width="425"/> 
+![image-center](/assets/images/mtaproject/distribution.png)
+![image-center](/assets/images/mtaproject/grand_rating.png)
