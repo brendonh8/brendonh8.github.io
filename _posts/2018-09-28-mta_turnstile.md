@@ -87,3 +87,7 @@ Looking at each control area would give us an idea of the traffic going through 
 This formula we made will weigh stations with more entrances than exits as a lower rating. A better station to enter would be one that has less traffic coming out of it since it is easier to move with the flow of people than against them. This formula proved useful in uncovering the best stations to enter. The plots below show the distribution of entries to exits in Grand Central as well as how our formula rated each of the entrances.
 
 <img src="/assets/images/mtaproject/distribution.png" width="400"/> <img src="/assets/images/mtaproject/grand_rating.png" width="400"/> 
+
+The entrance R238A is consistently the best entrance during the morning times even though R237 has the least amount of entries at those times. So the formula is showing promising results. Looking further into more stations shows that there is clear winners in multiple situations.
+
+![image-center](/assets/images/mtaproject/station_ratings.png)
