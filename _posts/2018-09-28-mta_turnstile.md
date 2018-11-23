@@ -16,6 +16,10 @@ excerpt: "Optimizing Citymapper routes using MTA turnstile data"
 
 - [Calculations/Findings](#heading-4)
 
+- [Conclusions](#heading-5)
+
+- [Limitations](#heading-6)
+
 ## <a name="heading-1"></a>Overview
 
 The New York City subway system is a notoriously busy part of everyone's commute. Living in NYC has given me first hand experience of this. The biggest pressure point of commuting for me is getting stuck going in and out of the station. While it can only be for a couple minutes, those minutes drag on forever as I get sandwiched between people going both directions. This issue is the main focus of this post.
@@ -91,3 +95,17 @@ This formula we made will weigh stations with more entrances than exits as a low
 The entrance R238A is consistently the best entrance during the morning times even though R237 has the least amount of entries at those times. So the formula is showing promising results. Looking further into more stations shows that there is clear winners in multiple situations.
 
 ![image-center](/assets/images/mtaproject/station_ratings.png)
+
+## <a name="heading-5"></a>Conclusions
+
+We successfully uncovered the best entrance that someone could use to avoid the hassle of fighting through a crowd. However, if our system reccomends an entrance completely out of the way, what use will it actually be? The important thing to keep in consideration is that this reccomendation system will only come into effect when traffic is particularly bad. It would just be an added level of comfort in the app knowing that you can avoid the crowd. An actual implementation of the feature might look like this:
+
+ ![image-center](/assets/images/mtaproject/reccomender.png)
+
+If a user gets directed to the same entrance every day and there is constantly a crowd, they might get iritated that Citymapper keeps sending them into a crowd. Instead of just directing a user to a calculated best entrance, it can tell them there may be a crowd and ask if they want to switch to the best closest entrance. 
+
+## <a name="heading-6"></a>Limitations
+
+Using the MTA data proved as an effective way to uncover the fact that there are more efficient ways to operate the NYC subway system. However our analysis is limited to the quality of the data that the MTA collects. This could cause some issues with results as it is not the best kept data. The turnstile counters occasionally reset to 0, presumably for maintenance. They also sometimes start counting backwards and go negative as well as exceeding 5,000 passengers per day through a single turnstile. We were able to account for these issues as well as possible.
+
+Our analysis is also grouping entrance and exit counts into periods of four hours due to when the counters are recorded. If Citymapper were to implement a feature like this, it would be more effective to see how many direction requests are going to certain stations and base their decisions on those numbers. Then real-time data could be used to direct users.
