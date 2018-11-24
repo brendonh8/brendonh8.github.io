@@ -50,9 +50,9 @@ Another useful feature is the multiple download starts. I quickly found out that
 
 ## <a name="heading-3"></a>Feature Engineering
 
-The heart of this project relied on the feature engineering to find some type of relationship between job skills and salary. This was going to be a supervised regression problem, so I needed to use Glassdoor's salary estimations as my labels. I filtered out any postings without salary estimations and cleaned any punctuation out of the job descriptions to make feature extraction easier. 
+The heart of this project relied on the feature engineering to find some type of relationship between job skills and salary. This was going to be a supervised regression problem, so I needed to use Glassdoor's salary estimations as my dependent variable. I filtered out any postings without salary estimations and cleaned any punctuation out of the job descriptions to make feature extraction easier. 
 
-Since I am dealing entirely with text data, I need to create dummy variables for all of my features. This is essentially vectorizing my job descriptions into a sparse matrix, except I am choosing the features myself. This is a very manual process with a lot of retracing steps to see what features work and what doesn't. Ultimately, I split my features into six different categories.
+Since I am dealing entirely with text data, I need to create dummy variables for all of my features. This is essentially vectorizing my job descriptions into a sparse matrix, except I am choosing the features myself. This is a very manual process with a lot of retracing steps to see what features work and what doesn't. Ultimately, I split my features into six different categories. 
 
 <table>
   <tbody>
@@ -122,3 +122,10 @@ Since I am dealing entirely with text data, I need to create dummy variables for
     </tr>
   </tbody>
 </table>
+
+In order to prevent overfitting, I needed to split up the data that I scraped into testing and validation sets. Since I needed to also test to see if the features I created made an impact on the model, I kept a holdout set to run the final model on. I used a 70/30 split for the holdout set then another 70/30 split for the training and validation set. The split would look something like below:
+
+![image-center](/assets/images/glassdoorproject/datasplit.png)
+
+
+I wanted to see how much of the variance in the dependent variable I could explain from the independent variables that I create. So using R-Squared as my metric, I progressively added more and more features to see what would improve the model.
