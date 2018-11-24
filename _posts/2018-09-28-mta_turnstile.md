@@ -1,5 +1,5 @@
 ---
-title: "Optimizing New York City's Subway Traffic"
+title: "Skip The Crowd"
 date: 2018-09-28
 tags: [Python]
 header:
