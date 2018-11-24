@@ -133,9 +133,9 @@ I wanted to see how much of the variance in the dependent variable I could expla
 
 Using the features I created, I linearly fit a model and viewed how each coefficient correlated with the salary of data science positions. The model does show correlation that intuitively makes sense based on the coefficients. Looking at the visual representation below:
 
-<img src="/assets/images/glassdoorproject/degreecoef.png" width=50%/> <img src="/assets/images/glassdoorproject/titlecoef.png" width=50%/> 
+<img src="/assets/images/glassdoorproject/degreecoef.png" width='390'/> <img src="/assets/images/glassdoorproject/titlecoef.png" width='390'/> 
 
-<img src="/assets/images/glassdoorproject/skillcoef.png" width=50%/> <img src="/assets/images/glassdoorproject/langcoef.png" width=50%/> 
+<img src="/assets/images/glassdoorproject/skillcoef.png" width='390'/> <img src="/assets/images/glassdoorproject/langcoef.png" width='390'/> 
 
 Looking at these relationships side by side, it is clear that some make sense intuitively while others seem slightly off. The title coefficients have a leader with the title of director. However, the language python looks to be just as important related to salary as the title of director. It is imprtant to keep in mind that these coefficients are based on occurences withing the job descriptions. Many of the highest paying jobs will have python listed as a skill, and the few highest paying jobs would have a title of director which could be why they have an almost equal score. 
 
@@ -147,11 +147,9 @@ In addition to skills that are constantly spammed into job descriptions, I tried
 
 The features I created are very close to capturing enough of a trend to make a salary predictor. However, the model still is not perfect. My root mean squared error ended up being around $30,000 and my R-Squared value was .31 when tested on the holdout set. There is definately some trend that my features are not capturing. This is clearly shown from the plots below:
 
-<div class="row">
-  <div class="column">
-    <img src="/assets/images/glassdoorproject/actvspred.png" alt="Acutal vs Predicted" style="width:50%">
-  </div>
-  <div class="column">
-    <img src="/assets/images/glassdoorproject/residvsactual.png" alt="Residual vs Acutal" style="width:50%">
-  </div>
-</div>
+
+Acutal vs Predicted        |  Residuals vs Acutal
+:-------------------------:|:-------------------------:
+![](/assets/images/glassdoorproject/actvspred.png)  |  ![](/assets/images/glassdoorproject/residvsactual.png)
+
+
