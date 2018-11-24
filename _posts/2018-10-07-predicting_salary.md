@@ -4,7 +4,7 @@ date: 2018-10-07
 tags: [Python, Scrapy]
 header:
     overlay_image: "/assets/images/glassdoorproject/silverwall.jpg"
-excerpt: "Predicting expected salary for Data Science related jobs from Glassdoor postings"
+excerpt: "Predicting expected salary for Data Science related jobs from Glassdoor postings using Linear Regression"
 ---
 ## Table of Contents
 
@@ -12,7 +12,7 @@ excerpt: "Predicting expected salary for Data Science related jobs from Glassdoo
 
 - [Data Acquisition](#heading-2)
 
-- [EDA](#heading-3)
+- [Feature Engineering](#heading-3)
 
 - [Calculations/Findings](#heading-4)
 
@@ -48,4 +48,77 @@ def get_proxies():
 
 Another useful feature is the multiple download starts. I quickly found out that glassdoor only shows the first thousand job postings, after that the pages will 404. A thousand job posts is decent, but many of those may not even be related to data positions. Instead of setting the scraper to search the whole country for Data posisions, I gave it six different state searches: NYC, California, Seattle, Colorado, Texas, and Virginia. Scrapy would simultaneously go through each of these pages, so in the end I had around 6,000 job postings to work with.
 
-## <a name="heading-3"></a>EDA
+## <a name="heading-3"></a>Feature Engineering
+
+The heart of this project relied on the feature engineering to find some type of relationship between job skills and salary. This was going to be a supervised regression problem, so I needed to use Glassdoor's salary estimations as my labels. I filtered out any postings without salary estimations and cleaned any punctuation out of the job descriptions to make feature extraction easier. 
+
+Since I am dealing entirely with text data, I need to create dummy variables for all of my features. This is essentially vectorizing my job descriptions into a sparse matrix, except I am choosing the features myself. This is a very manual process with a lot of retracing steps to see what features work and what doesn't. Ultimately, I split my features into six different categories.
+
+<table>
+  <tbody>
+    <tr>
+      <th>Programming</th>
+      <th align="center">Skillset</th>
+      <th align="center">Company Specific</th>
+      <th>Degree</th>
+      <th>Experience</th>
+      <th>Tile</th>
+    </tr>
+    <tr>
+      <td>
+        <ul>
+          <li>Python</li>
+          <li>R</li>
+          <li>SQL</li>
+          <li>Java</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>Data Mining</li>
+          <li>Statistics</li>
+          <li>Communication</li>
+          <li>Predictive Modeling</li>
+          <li>Presenting</li>
+          <li>Machine Learning (Tflow, Keras, etc.)</li>
+          <li>AWS</li>
+          <li>Big Data (Hadoop, Spark, etc.)</li>
+          <li>Data Visualization (Tableau, etc.)</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>Vacation</li>
+          <li>401k</li>
+          <li>Health Benefits</li>
+          <li>Travel</li>
+          <li>Free Food</li>
+          <li>Equity</li>
+          <li>Pets</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>MS</li>
+          <li>BS</li>
+          <li>PHD</li>
+        </ul>
+      </td>
+      <td>
+      <ul>
+          <li>High (4+ years)</li>
+          <li>Low (0-3) years</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>Intern</li>
+          <li>Junior</li>
+          <li>Senior</li>
+          <li>Manager</li>
+          <li>Director</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
