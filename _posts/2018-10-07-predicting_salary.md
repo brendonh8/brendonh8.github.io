@@ -14,7 +14,7 @@ excerpt: "Predicting expected salary for Data Science related jobs from Glassdoo
 
 - [Feature Engineering](#heading-3)
 
-- [Calculations/Findings](#heading-4)
+- [Modeling](#heading-4)
 
 - [Conclusions](#heading-5)
 
@@ -127,5 +127,12 @@ In order to prevent overfitting, I needed to split up the data that I scraped in
 
 ![image-center](/assets/images/glassdoorproject/datasplit.png)
 
+I wanted to see how much of the variance in the dependent variable I could explain from the independent variables that I create. So using R-Squared as my metric, I progressively added more and more features to see what would improve the model. After trial and error, I ended up with four feature categories from above: Degree, Language, Skill, and Title. 
 
-I wanted to see how much of the variance in the dependent variable I could explain from the independent variables that I create. So using R-Squared as my metric, I progressively added more and more features to see what would improve the model.
+## <a name="heading-4"></a>Modeling
+
+Using the features I created, I linearly fit a model and viewed how each coefficient correlated with the salary of data science positions. The model does show correlation that intuitively makes sense based on the coefficients. Looking at the visual representation below:
+
+<img src="/assets/images/glassdoorproject/degreecoef.png" width="400"/> <img src="/assets/images/glassdoorproject/titlecoef.png" width="400"/> 
+
+<img src="/assets/images/glassdoorproject/skillcoef.png" width="400"/> <img src="/assets/images/glassdoorproject/langcoef.png" width="400"/> 
