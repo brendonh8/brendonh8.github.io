@@ -133,6 +133,6 @@ I wanted to see how much of the variance in the dependent variable I could expla
 
 Using the features I created, I linearly fit a model and viewed how each coefficient correlated with the salary of data science positions. The model does show correlation that intuitively makes sense based on the coefficients. Looking at the visual representation below:
 
-<img src="/assets/images/glassdoorproject/degreecoef.png" width="400"/> <img src="/assets/images/glassdoorproject/titlecoef.png" width="400"/> 
+<img src="/assets/images/glassdoorproject/degreecoef.png" width="390"/> <img src="/assets/images/glassdoorproject/titlecoef.png" width="390"/> 
 
-<img src="/assets/images/glassdoorproject/skillcoef.png" width="400"/> <img src="/assets/images/glassdoorproject/langcoef.png" width="400"/> 
+<img src="/assets/images/glassdoorproject/skillcoef.png" width="390"/> <img src="/assets/images/glassdoorproject/langcoef.png" width="390"/> 
