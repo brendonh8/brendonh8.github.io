@@ -109,3 +109,5 @@ If a user gets directed to the same entrance every day and there is constantly a
 Using the MTA data proved as an effective way to uncover the fact that there are more efficient ways to operate the NYC subway system. However our analysis is limited to the quality of the data that the MTA collects. This could cause some issues with results as it is not the best kept data. The turnstile counters occasionally reset to 0, presumably for maintenance. They also sometimes start counting backwards and go negative as well as exceeding 5,000 passengers per day through a single turnstile. We were able to account for these issues as well as possible.
 
 Our analysis is also grouping entrance and exit counts into periods of four hours due to when the counters are recorded. If Citymapper were to implement a feature like this, it would be more effective to see how many direction requests are going to certain stations and base their decisions on those numbers. Then real-time data could be used to direct users.
+
+To notebook containing the project workflow can be found [here](https://github.com/brendonh8/Skip-The-Crowd/blob/master/mta%20project%20compiled.ipynb)
