@@ -155,3 +155,15 @@ The features I created are very close to capturing enough of a trend to make a s
     <img src="/assets/images/glassdoorproject/residvsactual.png" alt="Residual vs Acutal" style="width:100%">
   </div>
 </div>
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
