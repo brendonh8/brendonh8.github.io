@@ -16,7 +16,7 @@ excerpt: "Predicting expected salary for Data Science related jobs from Glassdoo
 
 - [Modeling](#heading-4)
 
-- [Conclusions](#heading-5)
+- [Results/Conclusions](#heading-5)
 
 - [Limitations](#heading-6)
 
@@ -136,3 +136,12 @@ Using the features I created, I linearly fit a model and viewed how each coeffic
 <img src="/assets/images/glassdoorproject/degreecoef.png" width="390"/> <img src="/assets/images/glassdoorproject/titlecoef.png" width="390"/> 
 
 <img src="/assets/images/glassdoorproject/skillcoef.png" width="390"/> <img src="/assets/images/glassdoorproject/langcoef.png" width="390"/> 
+
+Looking at these relationships side by side, it is clear that some make sense intuitively while others seem slightly off. The title coefficients have a leader with the title of director. However, the language python looks to be just as important related to salary as the title of director. It is imprtant to keep in mind that these coefficients are based on occurences withing the job descriptions. Many of the highest paying jobs will have python listed as a skill, and the few highest paying jobs would have a title of director which could be why they have an almost equal score. 
+
+Another interesting takeaway is that skills like communication and presenting look to be associated with less high paying jobs. Bachelors degrees also appear to be less correlated with salary. These would seem incorrect since every job appears to require a bachelors degree. Although that is most likely the reason that they have a negative correlation with salary. Since every single job post has these skills listed, they carry no weight to contribute value to the model.
+
+In addition to skills that are constantly spammed into job descriptions, I tried including work experience for low (0-3 years) and high (3+) years. It actually negatively effected the model which is why I did not even include it in the model. The fact that work experience doesn't contribute value to my model is somewhat relieving. This means the advice to take required experience on job postings with a grain of salt may actually be true.
+
+## <a name="heading-5"></a>Results/Conclusions
+
