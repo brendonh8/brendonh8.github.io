@@ -147,4 +147,11 @@ In addition to skills that are constantly spammed into job descriptions, I tried
 
 The features I created are very close to capturing enough of a trend to make a salary predictor. However, the model still is not perfect. My root mean squared error ended up being around $30,000 and my R-Squared value was .31 when tested on the holdout set. There is definately some trend that my features are not capturing. This is clearly shown from the plots below:
 
-<img src="/assets/images/glassdoorproject/actvspred.png" width="390"/> <img src="/assets/images/glassdoorproject/residvsactual.png" width="390"/> 
+<div class="row">
+  <div class="column">
+    <img src="/assets/images/glassdoorproject/actvspred.png" alt="Acutal vs Predicted" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="/assets/images/glassdoorproject/residvsactual.png" alt="Residual vs Acutal" style="width:100%">
+  </div>
+</div>
