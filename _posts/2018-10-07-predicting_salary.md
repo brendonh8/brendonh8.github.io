@@ -149,21 +149,9 @@ The features I created are very close to capturing enough of a trend to make a s
 
 <div class="row">
   <div class="column">
-    <img src="/assets/images/glassdoorproject/actvspred.png" alt="Acutal vs Predicted" style="width:100%">
+    <img src="/assets/images/glassdoorproject/actvspred.png" alt="Acutal vs Predicted" style="width:50%">
   </div>
   <div class="column">
-    <img src="/assets/images/glassdoorproject/residvsactual.png" alt="Residual vs Acutal" style="width:100%">
+    <img src="/assets/images/glassdoorproject/residvsactual.png" alt="Residual vs Acutal" style="width:50%">
   </div>
 </div>
-
-.column {
-  float: left;
-  width: 50%;
-  padding: 5px;
-}
-
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
