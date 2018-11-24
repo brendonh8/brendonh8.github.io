@@ -3,7 +3,7 @@ title: "Predicting Compensation"
 date: 2018-10-07
 tags: [Python, Scrapy]
 header:
-    overlay_image: "/assets/images/mtaproject/silverwall.jpg"
+    overlay_image: "/assets/images/glassdoorproject/silverwall.jpg"
 excerpt: "Predicting expected salary for Data Science related jobs from Glassdoor postings"
 ---
 ## Table of Contents
