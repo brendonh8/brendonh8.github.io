@@ -18,7 +18,7 @@ excerpt: "Predicting expected salary for Data Science related jobs from Glassdoo
 
 - [Results/Conclusions](#heading-5)
 
-- [Limitations](#heading-6)
+- [Limitations/Future Work](#heading-6)
 
 ## <a name="heading-1"></a>Overview
 
@@ -152,4 +152,10 @@ Acutal vs Predicted        |  Residuals vs Acutal
 :-------------------------:|:-------------------------:
 ![](/assets/images/glassdoorproject/actvspred.png)  |  ![](/assets/images/glassdoorproject/residvsactual.png)
 
+The residuals plot is showing the error between my predicted values and the actual salaries for the job postings. There is a clear linear trend in the residuals which means there is a polynomial relationship that my current features are not capturing. Once I had this model, I attempted to use L1 and L2 regularization to attempt to generalize the model, but the model actually performed worse. In order for the model to be able to predict salary from given skills, more features will need to be created to improve the R-Squared value.
 
+## <a name="heading-6"></a>Limitations/Future Work
+
+This model contains some limitations that could be accounted for if I have time to come back to this project. The main limitation is that the features are all one hot encoded variables which makes it difficult to transform any of the features. If I could calculate some totals between the job descriptions, that may help improve the model. 
+
+My features are currently made out of words I extract manually. It may be more useful to use NLP strategies and lemmatize the job postings to extract topics using something like non negative matrix factorization (NMF). If these strategies brought the accuracy of the model up, future work would include applying the model to a web app that will predict your salary based on skills you have.
