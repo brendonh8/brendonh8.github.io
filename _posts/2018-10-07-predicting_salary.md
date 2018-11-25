@@ -159,3 +159,5 @@ The residuals plot is showing the error between my predicted values and the actu
 This model contains some limitations that could be accounted for if I have time to come back to this project. The main limitation is that the features are all one hot encoded variables which makes it difficult to transform any of the features. If I could calculate some totals between the job descriptions, that may help improve the model. 
 
 My features are currently made out of words I extract manually. It may be more useful to use NLP strategies and lemmatize the job postings to extract topics using something like non negative matrix factorization (NMF). If these strategies brought the accuracy of the model up, future work would include applying the model to a web app that will predict your salary based on skills you have.
+
+The jupyter notebook and scraping scripts I wrote can be found [here](https://github.com/brendonh8/Predicting-Compensation)
