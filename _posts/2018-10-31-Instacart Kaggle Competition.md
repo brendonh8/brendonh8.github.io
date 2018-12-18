@@ -2,6 +2,7 @@
 title: "Instacart Kaggle Competition"
 date: 2018-10-31
 tags: [Python, AWS, sklearn, plotly]
+htmlwidgets: TRUE
 header:
     overlay_image: "/assets/images/instacartproject/burger.jpg"
 excerpt: "Predicting the next item ordered using Instacart order data"
@@ -42,3 +43,8 @@ In order to create a model that predicts if a product will be ordered next or no
 ![image-center](/assets/images/instacartproject/spread_over_week.png)
 
 The daily trends show Saturday (0) and Sunday (1) being the days with the most orders. A majority of the orders are made between the morning and afternoon. 
+
+<div>
+    <a href="https://plot.ly/~brendonh8/7/?share_key=vQl8lWC3iRPF1DqJECXJhq" target="_blank" title="Plot 7" style="display: block; text-align: center;"><img src="https://plot.ly/~brendonh8/7.png?share_key=vQl8lWC3iRPF1DqJECXJhq" alt="Plot 7" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+    <script data-plotly="brendonh8:7" sharekey-plotly="vQl8lWC3iRPF1DqJECXJhq" src="https://plot.ly/embed.js" async></script>
+</div>
