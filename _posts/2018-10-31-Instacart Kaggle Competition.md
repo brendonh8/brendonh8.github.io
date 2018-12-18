@@ -45,6 +45,19 @@ In order to create a model that predicts if a product will be ordered next or no
 The daily trends show Saturday (0) and Sunday (1) being the days with the most orders. A majority of the orders are made between the morning and afternoon. 
 
 <div>
+    <a href="https://plot.ly/~brendonh8/9/?share_key=qliPLVkzwR1mnLPhbnXj9h" target="_blank" title="Plot 9" style="display: block; text-align: center;"><img src="https://plot.ly/~brendonh8/9.png?share_key=qliPLVkzwR1mnLPhbnXj9h" alt="Plot 9" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+    <script data-plotly="brendonh8:9" sharekey-plotly="qliPLVkzwR1mnLPhbnXj9h" src="https://plot.ly/embed.js" async></script>
+</div>
+
+Looking further into the orders throughout the day makes it clear that Saturday and Sunday have the largest order numbers. There are also small spikes in the morning and evening times.
+
+<div>
     <a href="https://plot.ly/~brendonh8/7/?share_key=vQl8lWC3iRPF1DqJECXJhq" target="_blank" title="Plot 7" style="display: block; text-align: center;"><img src="https://plot.ly/~brendonh8/7.png?share_key=vQl8lWC3iRPF1DqJECXJhq" alt="Plot 7" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
     <script data-plotly="brendonh8:7" sharekey-plotly="vQl8lWC3iRPF1DqJECXJhq" src="https://plot.ly/embed.js" async></script>
 </div>
+
+The order trends that customers have seem to be on a week to week basis. There are some clear spikes in orders around every 7 days since their last order. The spike at 30 is most likely due to customers that did not order again. 
+
+Most of the products that customers order tend to be produce. Apparently Instacart customers love Bananas. 
+
+![image-center](/assets/images/instacartproject/top_products.png)
