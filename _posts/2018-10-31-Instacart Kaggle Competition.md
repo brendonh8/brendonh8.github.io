@@ -61,3 +61,24 @@ The order trends that customers have seem to be on a week to week basis. There a
 Most of the products that customers order tend to be produce. Apparently Instacart customers love Bananas. 
 
 ![image-center](/assets/images/instacartproject/top_products.png)
+
+Keep in mind, I used a fraction of the full dataset to perform EDA, the actual dataset was too large to output these plots quickly. The general trend of the data is the same.
+
+## <a name="heading-3"></a>Feature Engineering
+
+Initially I kept using the smaller dataset to for features, however when I actually tested the features and started modeling I needed to switch to AWS. My 8 GB Macbook started to have some trouble with the full 3 million orders.
+
+I kept track of my feature progress by creating a baseline and continuously adding and testing features to see what would help the model. The first thing to do was actually create the target. I needed to predict whether or not a product will be ordered in the next cart, so I used the most recent orders to create a new column for each product of whether or not it is in the most recent cart. This 0 or 1 value is what I will try to predict. This also means that the feature table needs to be made up of user-product combinations, not order numbers. I did this with a short script below.
+
+```python
+def get_latest_cart(x):
+    cart = {'latest_cart': set(product for product in x['product_id'])}
+    return pd.Series(cart)
+
+train_carts = (df_order_products_train.groupby('user_id').apply(get_latest_cart)
+                                                        .reset_index())
+df_X = df_X.merge(train_carts, on='user_id')
+df_X['in_cart'] = (df_X.apply(lambda row: row['product_id'] in row['latest_cart'], axis=1).astype(int))
+```
+
+Pandas makes it easy to apply functions to dataframes this way. This is how I created many of my features as well. My first feature was the total times a user has ordered a product.
