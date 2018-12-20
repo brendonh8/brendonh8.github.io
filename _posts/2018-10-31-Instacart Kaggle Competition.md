@@ -81,4 +81,60 @@ df_X = df_X.merge(train_carts, on='user_id')
 df_X['in_cart'] = (df_X.apply(lambda row: row['product_id'] in row['latest_cart'], axis=1).astype(int))
 ```
 
-Pandas makes it easy to apply functions to dataframes this way. This is how I created many of my features as well. My first feature was the total times a user has ordered a product.
+Pandas makes it easy to apply functions to dataframes this way. This is how I created many of my features as well. My **first feature was the total times a user has ordered a product**. With my base feature, I created a function to manually split the data into testing and training sets. I made a random 20% selection to use as my testing data and made sure those users were not in the training set so there was no overlap or else I would be cheating.
+
+This classification is very **imbalanced**. Out of five thousand products, only 10 percent of them are actually in someones cart. This is important later on when it comes to optimizing my scoring metric. Which brings me to what my scoring metric actually is. The Kaggle competition requires that **F1 is optimized for**. This makes sense since you would want to reccomend customers products you know they will be ordering, but also some good choices for things they might not have ordered yet. If I just scored using accuracy, customers would just be recommended things they have ordered, which would most likely be bananas according to this dataset. 
+
+The target variable is binary, so to perform quick calculations, I used **Logistic Regression** to test the features I add to the model. My **F1 score for the baseline model was 0.0821**... so it took a little while to build it up.
+
+For the rest of the features I created, I split them into categories for **User**, **Product**, and **User-Product**.
+
+
+### Features
+
+<table>
+  <tbody>
+    <tr>
+      <th>User</th>
+      <th align="center">Product</th>
+      <th align="center">User-Product</th>
+    </tr>
+    <tr>
+      <td>
+        <ul>
+          <li>Total Orders</li>
+          <li>Average Cartsize</li>
+          <li>Total Products</li>
+          <li>Average Days Since Ordered</li>
+          <li>Average Day of Week Ordered</li>
+          <li>Average Hour of Day Ordered</li>
+          <li>Number of Departments Ordered From</li>
+          <li>Number of Aisles Ordered From</li>
+          <li>Days Since their Last Order</li>
+          <li>Days Since their Last Order Squared</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>Total Orders</li>
+          <li>Add to Cart Order Mean</li>
+          <li>Add to Cart Order Min</li>
+          <li>Add to Cart Order Max</li>
+          <li>Add to Cart Order Std Dev</li>
+          <li>Probability of Re-Order</li>
+          <li>Day Since Ordered Mean</li>
+          <li>Day Since Ordered Min</li>
+          <li>Day Since Ordered Max</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>Total Orders</li>
+          <li>Average Add to Cart Order</li>
+          <li>Order Frequency</li>
+          <li>Order Streak</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
