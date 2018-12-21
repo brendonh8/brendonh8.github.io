@@ -17,10 +17,6 @@ excerpt: "Predicting the next item ordered using Instacart order data"
 
 - [Modeling](#heading-4)
 
-- [Results/Conclusions](#heading-5)
-
-- [Limitations/Future Work](#heading-6)
-
 ## <a name="heading-1"></a>Overview
 
 Every week I bulk cook all of my meals so I tend to order the same things... a lot. If the grocery store wasn't so close to me, I would definately be an avid user of Instacart. Once I found their dataset for their Kaggle competition I figured it would be a perfect challenge for me. In case you have not heard of it, Instacart is a grocery delivery app. When you order from the app, someone will pick up your food from the grocery store and deliver it to you. The delivery persons credit card will be filled with just enough money to cover your groceries.
@@ -150,3 +146,8 @@ I wanted to test how different classification algorithms performed with these fe
 
 ![image-center](/assets/images/instacartproject/f1threshold.png)
 
+## <a name="heading-5"></a>Results/Conclusions
+
+Overall, the features I ended up with were pretty decent indicators of whether or not an item will be added to someones cart next. An **F1 score of .425** is pretty good for this dataset. For reference, some of the top submissions in the Kaggle competition were not getting past .41, however this competition is also more than a year old. The forums gave some aid of which features were good additions, however actually calculating them was no easy feat. 
+
+Gradient Boosting turned out to be the best classification algorithm for this problem. I found it interesting that just by using Decision Tree's, the model performed the worst. However using XGBoost, which uses the errors from many decision trees, ended up performing the best. My key takeaway from this project would most likely be that the time spent parameter tuning does not give an equal reward. It is definately necessary to use a simple base model and build upon it and save the tuning to get those final last poinst. Overall I am happy with this model that I made and if I were to make any next steps it would be to formally submit the project to Kaggle.
