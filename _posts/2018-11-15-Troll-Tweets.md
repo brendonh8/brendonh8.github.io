@@ -4,7 +4,7 @@ date: 2018-11-15
 tags: [Python, AWS, NLTK, Spacy, sklearn, Gensim, plotly, NetworkX]
 htmlwidgets: TRUE
 header:
-    overlay_image: "/assets/images/instacartproject/twitter.jpg"
+    overlay_image: "/assets/images/trolltweets/twitter.jpg"
 excerpt: "Uncover the topics that the Russian troll company, Internet Research Agency (IRA), drew their attention to on Twitter"
 ---
 ## Table of Contents
