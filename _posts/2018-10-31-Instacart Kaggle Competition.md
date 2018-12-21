@@ -89,9 +89,6 @@ The target variable is binary, so to perform quick calculations, I used **Logist
 
 For the rest of the features I created, I split them into categories for **User**, **Product**, and **User-Product**.
 
-
-### Features
-
 <table>
   <tbody>
     <tr>
@@ -138,3 +135,11 @@ For the rest of the features I created, I split them into categories for **User*
     </tr>
   </tbody>
 </table>
+
+All of these features managed to improve my F1 score up to 0.26. After I got my features, I tested them using a range of different thresholds and weights. The best threshold was able to jump my **F1 score to just above .4**. Class weights did not help much, only increasing F1 by about .005. The ROC curve and F1 scores for different thresholds can be seen below. 
+
+<img src="/assets/images/glassdoorproject/initial_lr.png" width='350'/> <img src="/assets/images/glassdoorproject/roc_curve.png" width='350'/> 
+
+Logistic Regression performed fairly well with the created features. Many of them contributed a decent amount to the model. The feature importances can be seen below.
+
+![image-center](/assets/images/instacartproject/importance.png)
