@@ -13,7 +13,7 @@ excerpt: "Uncover the topics that the Russian troll company, Internet Research A
 
 - [Data Preparation](#heading-2)
 
-- [Feature Engineering](#heading-3)
+- [Topic Modeling](#heading-3)
 
 - [Modeling](#heading-4)
 
@@ -35,5 +35,7 @@ Natural Language Processing works much better with generalized words. A common w
 
 NLTK has a fairly impressive lemmatizer however for the amount of documents (tweets) I am using, it was performing pretty slow. I decided to use a newer framework called SpaCy that lemmatizes in a different way. NLTK attempts to split the text into sentences, SpaCy constructs a syntactic tree for each sentence which allows for much more information about the words to be retained. An example of this tree can be seen [here](https://explosion.ai/demos/displacy). This made it very easy to remove things like pronouns. 
 
+The final step before converting to a bag-of-words format for NLP is creating N-grams. I decided to only use bi-grams since tweets are generally short sentences and anything higher may not result in being useful. Bi-grams double up words so something like "new york" is captured instead of just reading "new" and "york".
 
+## <a name="heading-3"></a>Topic Modeling
 
