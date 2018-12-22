@@ -32,3 +32,8 @@ Tweets contain many random spelling errors and characters that need to be cleane
 Natural Language Processing works much better with generalized words. A common way to do this would be stemming, although it is also the simplest. The idea behind stemming is to derive the words to a base form. However the process of stemming is simple and only chops off the ending of words to try and achieve this goal. I attempted to use NLTK's stemmer and once I extracted word topics, they were incoherent. I decided to use another language generalizer called lemmatization. Lemmatization takes part of speech into consideration so words get reverted to a general form while still maintaining their structure. The idea of stemming and lemmatizing can be seen below:
 
 ![image-center](/assets/images/trolltweets/stemlem.jpg)
+
+NLTK has a fairly impressive lemmatizer however for the amount of documents (tweets) I am using, it was performing pretty slow. I decided to use a newer framework called SpaCy that lemmatizes in a different way. NLTK attempts to split the text into sentences, SpaCy constructs a syntactic tree for each sentence which allows for much more information about the words to be retained. An example of this tree can be seen [here](https://explosion.ai/demos/displacy). This made it very easy to remove things like pronouns. 
+
+
+
