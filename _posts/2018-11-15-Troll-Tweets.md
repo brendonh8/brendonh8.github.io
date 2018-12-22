@@ -11,7 +11,7 @@ excerpt: "Uncover the topics that the Russian troll company, Internet Research A
 
 - [Overview](#heading-1)
 
-- [Exploratory Data Analysis](#heading-2)
+- [Data Preparation](#heading-2)
 
 - [Feature Engineering](#heading-3)
 
@@ -24,3 +24,11 @@ I wanted my next project to be something that pertains to current events. With a
 The Internet Research Agency (IRA) is a Russian company located in a single building in Saint Petersburg, Russia. An post on The New York Times found [here](https://www.nytimes.com/2015/06/07/magazine/the-agency.html) sheds some light on what the company did. Their main business was troll farming. The employees were given a quota of tweets that they were required to produce every day. They managed multiple accounts each of which were directed towards different focuses. Their main goal was to create a toxic environment for information outlets. If people doubt the accuracy of anything on the internet, it would reduce the flow of information.
 
 Despite what some may think, IRA was not just sending tweets trying to push a single agenda. They were more focused on positive and negative comments directed to all political parties. My goal with this project is to see if I can uncover structure within the company and view what their network of accounts looks like.
+
+## <a name="heading-2"></a>Data Preparation
+
+Tweets contain many random spelling errors and characters that need to be cleaned to make analysis easier. There are many Russian tweets in this dataset so in order to extract information I needed to keep only the Enlgish tweets. Once I also removed any emoji's and punctuation, I could start to prepare the data for processing.
+
+Natural Language Processing works much better with generalized words. A common way to do this would be stemming, although it is also the simplest. The idea behind stemming is to derive the words to a base form. However the process of stemming is simple and only chops off the ending of words to try and achieve this goal. I attempted to use NLTK's stemmer and once I extracted word topics, they were incoherent. I decided to use another language generalizer called lemmatization. Lemmatization takes part of speech into consideration so words get reverted to a general form while still maintaining their structure. The idea of stemming and lemmatizing can be seen below:
+
+![image-center](/assets/images/trolltweets/stemlem.jpg)
