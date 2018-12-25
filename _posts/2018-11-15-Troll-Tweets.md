@@ -48,4 +48,38 @@ vectorizer = CountVectorizer(analyzer='word', max_features=100000, stop_words=st
 tweet_counts = vectorizer.fit_transform(string_tweets)
 ```
 
-With millions of tweets, there could potentially also be millions of words. I decided to limit the words to 100,000 and initially started with the standard stop words that NLTK has.
+With millions of tweets, there could potentially also be millions of words. I decided to limit the words to 100,000 and initially started with the standard stop words that NLTK has. The next step is to apply weights to the counts to account for occurences across all documents and the local document. This will be the Term-Frequency Inverse Document Frequency matrix (TFIDF). 
+
+- TF: Weight directly proportional to count for term within the document (local count).
+- IDF: Weight inversely proportional to count for term across all documents (global count).
+
+SKlearn also makes this simple with the following code snippet.
+
+```python
+transformer = TfidfTransformer(smooth_idf=False);
+tweet_tfidf = transformer.fit_transform(tweet_counts)
+```
+
+Once the TFIDF matrix was created, I fit the NMF model to the data and extracted the top 20 words of three topics to start. 
+
+|  |Topic# 01|Topic # 02|  Topic # 03|
+|0 |workout| exercise|  trump|
+|1 |gym| eat| president|
+|2 |partner| right| donald|
+|3 |kill|  diet|  news|
+|4 |sleep| walk|  politic|
+|5 |leg| run| break|
+|6 |eat| people|  obama|
+|7 |sore| ball|  people|
+|8 |ass| lose_weight| vote|
+|9 |clothe|  fat| hillary|
+|10  |run| life|  clinton|
+|11  |shower|  body|  man|
+|12  |right| sleep| win|
+|13  |plan| fun| supporter|
+|14  |wake|  extra_fry| black|
+|15  |tired| food|  right|
+|16  |life|  tired| white|
+|17  |finish|  healthy| woman|
+|18  |girl|  man| police|
+|19  |music|lazy|  kill|
