@@ -35,7 +35,17 @@ Natural Language Processing works much better with generalized words. A common w
 
 NLTK has a fairly impressive lemmatizer however for the amount of documents (tweets) I am using, it was performing pretty slow. I decided to use a newer framework called SpaCy that lemmatizes in a different way. NLTK attempts to split the text into sentences, SpaCy constructs a syntactic tree for each sentence which allows for much more information about the words to be retained. An example of this tree can be seen [here](https://explosion.ai/demos/displacy). This made it very easy to remove things like pronouns. 
 
-The final step before converting to a bag-of-words format for NLP is creating N-grams. I decided to only use bi-grams since tweets are generally short sentences and anything higher may not result in being useful. Bi-grams double up words so something like "new york" is captured instead of just reading "new" and "york".
+The final step before converting to a term-frequency format for NLP is creating N-grams. I decided to only use bi-grams since tweets are generally short sentences and anything higher may not result in being useful. Bi-grams double up words so something like "new york" is captured instead of just reading "new" and "york".
 
 ## <a name="heading-3"></a>Topic Modeling
 
+To extract topics from the tweet data, I needed to choose a factorization method. PCA gives negative factors a well as positive which is difficult to interpret for tweet topics that may contain a large amount of different components. Since tweets contain tons of different words, probabilities from LDA did not give me any more indication of topics and made determining them more confusing. I decided to use Non-Negative Matrix Factorization to extract topics.
+
+Sklearn makes using a complex factorization tool like NMF fairly easy. The first thing I did was create a term document matrix. This means that each document (tweet) is a row and each column is a unique word (token). These tokens are given frequency counts for each document by just using the snippet of code below.
+
+```python
+vectorizer = CountVectorizer(analyzer='word', max_features=100000, stop_words=stop_words)
+tweet_counts = vectorizer.fit_transform(string_tweets)
+```
+
+With millions of tweets, there could potentially also be millions of words. I decided to limit the words to 100,000 and initially started with the standard stop words that NLTK has.
