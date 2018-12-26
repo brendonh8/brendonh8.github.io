@@ -23,6 +23,13 @@ I wanted my next project to be something that pertains to current events. With a
 
 The Internet Research Agency (IRA) is a Russian company located in a single building in Saint Petersburg, Russia. An post on The New York Times found [here](https://www.nytimes.com/2015/06/07/magazine/the-agency.html) sheds some light on what the company did. Their main business was troll farming. The employees were given a quota of tweets that they were required to produce every day. They managed multiple accounts each of which were directed towards different focuses. Their main goal was to create a toxic environment for information outlets. If people doubt the accuracy of anything on the internet, it would reduce the flow of information.
 
+A count of tweets over time revealed that there are some trends that IRA seems to follow. During specific current events, most in the US and some around the world, they seem to increase their tweet frequency. Below I labeled some points in time that they increased their tweet output.
+
+<div>
+    <a href="https://plot.ly/~brendonh8/10/?share_key=9EMzpzpHiKiBJNpLSGlAO7" target="_blank" title="plot from API" style="display: block; text-align: center;"><img src="https://plot.ly/~brendonh8/10.png?share_key=9EMzpzpHiKiBJNpLSGlAO7" alt="plot from API" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+    <script data-plotly="brendonh8:10" sharekey-plotly="9EMzpzpHiKiBJNpLSGlAO7" src="https://plot.ly/embed.js" async></script>
+</div>
+
 Despite what some may think, IRA was not just sending tweets trying to push a single agenda. They were more focused on positive and negative comments directed to all political parties. My goal with this project is to see if I can uncover structure within the company and view what their network of accounts looks like.
 
 ## <a name="heading-2"></a>Data Preparation
@@ -83,3 +90,5 @@ Once the TFIDF matrix was created, I fit the NMF model to the data and extracted
 |17  |finish|  healthy| woman|
 |18  |girl|  man| police|
 |19  |music|lazy|  kill|
+
+In an effort to extract the topics that I thought would point to different political or world news subjects, I actually ended up extracting the tweets that the fake users would post to appear like real people. It looks like the go-to subject for appearing like a real account is excercise. I attempted to add gym lingo to my stop words to try and get rid of these gym topics but a better use was just filter out any tweets that were related to the first two topics. I treated these as fakes of the fake accounts as they did not tell me anything about the focus of IRA. 
