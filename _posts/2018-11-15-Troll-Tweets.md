@@ -124,4 +124,14 @@ I gave the negative right or left tweets labels of toxic as well. However the to
 
 ![image-center](/assets/images/trolltweets/legend.png){: .align-center}
 
-The plots below show 
+The plots below show the levels of activity of IRA during different times of the day.
+
+<figure>
+  <img src="/assets/images/trolltweets/avg_before.png">
+  <img src="/assets/images/trolltweets/avg_after.png">
+  <figcaption>Left: Tweet activity from 2015 till Dec 2016. Right: Tweet Activity from Jan 2017 until May 2018.</figcaption>
+</figure>
+
+It is important to note that during midday in the United States, there was still a considerable amount of tweets even though in Russia it would be off-work hours. The main difference between these timeframes is that the left plot is when Donald Trump was running for his presidency. The plot on the right is after he became president. There may be other factors in IRA's shift of work times, however it is clear that there was a large change in focus during this time. 
+
+The overall averages throughout the day also decreased. While the right plots timeframe is less that the lefts, there is still a considerably larger amount of tweet output during Trumps candidacy. 
