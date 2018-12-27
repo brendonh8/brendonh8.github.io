@@ -93,18 +93,31 @@ Once the TFIDF matrix was created, I fit the NMF model to the data and extracted
 
 In an effort to extract the topics that I thought would point to different political or world news subjects, I actually ended up extracting the tweets that the fake users would post to appear like real people. It looks like the go-to subject for appearing like a real account is excercise. I attempted to add gym lingo to my stop words to try and get rid of these gym topics but a better use was just filter out any tweets that were related to the first two topics. I treated these as fakes of the fake accounts as they did not tell me anything about the focus of IRA. 
 
-Once I did this, I split the remaining data into 5 topics. This gave what I thought to be the clearest separation of topics, however they are still somewhat mixed together.
+Once I filtered out the gym topics, I split the remaining data into 5 topics. This gave what I thought to be the clearest separation of topics, however they are still somewhat mixed together.
 
 |  |Topic # 01|  Topic # 02|  Topic # 03|  Topic # 04|  Topic # 05|
 |0 |news  |trump |blacklivesmatter  |man |people|
 |1 |state |president |black |local |black|
-|2 |topnews |donald  |blacktwitter  |police  |white
+|2 |topnews |donald  |blacktwitter  |police  |white|
 |3 |topnew  |politic |blm |sports  |right|
 |4 |fake  |break |staywoke  |woman god|
 |5 |kill  |obama |blackskinisnotacrime  |shoot| obama|
 |6 |syria |hillary |racism  |kill  |music|
-|7 |attack  |clinton |policebrutality sport |life|
+|7 |attack  |clinton |policebrutality |sport |life|
 |8 |local |maga  |cop |politics  |vote|
 |9 |china |vote  |support |arrest  |american|
 |10  |report  |supporter |blacktolive |black |hillary|
 
+I decided to keep these topics general to begin with. I gave them labels best describing the political focus based on the top words. A topic for general news posts, right wing focused tweets, and left wing focused tweets.:
+
+- Topic #01: **News**
+- Topic #02: **Right**
+- Topic #03: **Hashtagging**
+- Topic #04: **News**
+- Topic #05: **Left**
+
+I then used NLTK's vader sentiment analysis to further specify the topic names. By determining if the tweet was positive or negative, I filtered the tweets into more specific topics. If a tweet was focused on a right wing topic but was negative, I could label that as a left wing tweet and vice versa. The hashtagging topic was generally left wing hashtags focusing on things like the black lives matter movement. If a hashtag tweet was negative I labeled it as toxic and if it was positive I included it with left wing tweets. 
+
+I gave the negative right or left tweets labels of toxic as well. However the toxic left wing did not have a large quantity to show any separation so I included them all with left wing tweets. Overall I ended up with the following topics which I color coded for some plots below.
+
+[image-center](/assets/images/trolltweets/legend.png)
