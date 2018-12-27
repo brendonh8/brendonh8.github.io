@@ -17,6 +17,8 @@ excerpt: "Uncover the topics that the Russian troll company, Internet Research A
 
 - [Visualization](#heading-4)
 
+- [Limitations](#heading-5)
+
 ## <a name="heading-1"></a>Overview
 
 I wanted my next project to be something that pertains to current events. With all the news about Russia's focus on United States socail media, I figured that would be a good place to start. I was able to find a dataset released by fivethirtyeight containing 3 million tweets from a company called Internet Research Agency that have since been deleted from Twitter. 
@@ -147,3 +149,11 @@ With the topics established and users labeled, I could create an example network
 The size of the node would correspond to the amount of followers that the account has. The edges between each node were made if one account was either retweeted or mentioned. Note that this network only contains accounts that had a connection with another. Many of the fake accounts operated alone that did not contribute anything to the network.
 
 ![image-center](/assets/images/trolltweets/network.jpg){: .align-center}
+
+There is a clear split of groups between Democratic and Republican topics with some overlap of smaller accounts. Generally, the connections seem to pool around larger accounts, most likely trying to spread their tweets using the large following that the accounts have. 
+
+There are distinct groups between the Repulican and Democrat users, however not so much for the News users. News users tend to be spread out between the two groups. Intuitively, I would say this is because the tweets they put out were just news stories, not leaning to one side or another. Then the other fake users would work off of this by retweeting or mentioning the news stories and their opinions of them. This makes sense for some of the accounts as they have many connections between the Republican and Democrat users. This gives some insight into the structure of the company and how they fueled themselves off of these news accounts as well as the more popular fake users.
+
+## <a name="heading-5"></a>Limitations
+
+NMF proved to be a useful algorithm to uncover structure behind this Russian troll company. However, it is still difficult to uncover smaller details in the tweets. Factorization methods like NMF and LDA, while being useful are still just fancy ways to count words. Meaning behind the sentences are lost and while sentiment analysis can uncover some more details about the text, it is still not totally accurate. Tweets can have so many different focuses within them that it is difficult to go deeper than just general topics like Republican or Democrat. A more robust solution may be to use neural networks that can understand not only a count of words in each tweet but how they are organized as well. The next NLP project I pursue will most likely make use of some type of neural network.
