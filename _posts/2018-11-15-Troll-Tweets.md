@@ -120,4 +120,4 @@ I then used NLTK's vader sentiment analysis to further specify the topic names. 
 
 I gave the negative right or left tweets labels of toxic as well. However the toxic left wing did not have a large quantity to show any separation so I included them all with left wing tweets. Overall I ended up with the following topics which I color coded for some plots below.
 
-[image-center](/assets/images/trolltweets/legend.png)
+![image-center](/assets/images/trolltweets/legend.png)
