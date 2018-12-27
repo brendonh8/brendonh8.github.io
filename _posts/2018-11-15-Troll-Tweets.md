@@ -92,3 +92,19 @@ Once the TFIDF matrix was created, I fit the NMF model to the data and extracted
 |19  |music|lazy|  kill|
 
 In an effort to extract the topics that I thought would point to different political or world news subjects, I actually ended up extracting the tweets that the fake users would post to appear like real people. It looks like the go-to subject for appearing like a real account is excercise. I attempted to add gym lingo to my stop words to try and get rid of these gym topics but a better use was just filter out any tweets that were related to the first two topics. I treated these as fakes of the fake accounts as they did not tell me anything about the focus of IRA. 
+
+Once I did this, I split the remaining data into 5 topics. This gave what I thought to be the clearest separation of topics, however they are still somewhat mixed together.
+
+|  |Topic # 01|  Topic # 02|  Topic # 03|  Topic # 04|  Topic # 05|
+|0 |news  |trump |blacklivesmatter  |man |people|
+|1 |state |president |black |local |black|
+|2 |topnews |donald  |blacktwitter  |police  |white
+|3 |topnew  |politic |blm |sports  |right|
+|4 |fake  |break |staywoke  |woman god|
+|5 |kill  |obama |blackskinisnotacrime  |shoot| obama|
+|6 |syria |hillary |racism  |kill  |music|
+|7 |attack  |clinton |policebrutality sport |life|
+|8 |local |maga  |cop |politics  |vote|
+|9 |china |vote  |support |arrest  |american|
+|10  |report  |supporter |blacktolive |black |hillary|
+
