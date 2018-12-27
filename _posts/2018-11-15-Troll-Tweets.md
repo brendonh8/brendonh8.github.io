@@ -146,4 +146,4 @@ With the topics established and users labeled, I could create an example network
 
 The size of the node would correspond to the amount of followers that the account has. The edges between each node were made if one account was either retweeted or mentioned. Note that this network only contains accounts that had a connection with another. Many of the fake accounts operated alone that did not contribute anything to the network.
 
-![image-center](/assets/images/trolltweets/network.png){: .align-center}
+![image-center](/assets/images/trolltweets/network.jpg){: .align-center}
