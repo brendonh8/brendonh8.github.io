@@ -135,3 +135,15 @@ The plots below show the levels of activity of IRA during different times of the
 It is important to note that during midday in the United States, there was still a considerable amount of tweets even though in Russia it would be off-work hours. The main difference between these timeframes is that the left plot is when Donald Trump was running for his presidency. The plot on the right is after he became president. There may be other factors in IRA's shift of work times, however it is clear that there was a large change in focus during this time. 
 
 The overall averages throughout the day also decreased. While the right plots timeframe is less that the lefts, there is still a considerably larger amount of tweet output during Trumps candidacy. 
+
+Using sentiment for tweets is difficult since it is really only keeping count of positive or negative words. Taking an average and looking at the changes over time is a good way to get a general sense of sentiment.
+
+![image-center](/assets/images/trolltweets/sentiment.png){: .align-center}
+
+The user CRYSTAL1JOHNSON became a very highly followed left wing focused user over the years. Tracking the sentiment of this users tweets shows that before Donald Trump was elected, the tweets were overall more negative. Then after the election, they became more positive. It is difficult to conclude why this was for sure, but intuitively I would say the fake account was trying to coax its Democratic followers into supporting Trump.
+
+With the topics established and users labeled, I could create an example network using retweets and mentions from IRA's tweets. Every node would be a user colored according to their topic. The toxic users did not transfer well to the network graph so I decided to keep just three user topics: Right, Left, and News.
+
+The size of the node would correspond to the amount of followers that the account has. The edges between each node were made if one account was either retweeted or mentioned. Note that this network only contains accounts that had a connection with another. Many of the fake accounts operated alone that did not contribute anything to the network.
+
+![image-center](/assets/images/trolltweets/network.png){: .align-center}
