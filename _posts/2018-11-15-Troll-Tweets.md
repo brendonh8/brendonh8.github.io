@@ -15,7 +15,7 @@ excerpt: "Uncover the topics that the Russian troll company, Internet Research A
 
 - [Topic Modeling](#heading-3)
 
-- [Modeling](#heading-4)
+- [Visualization](#heading-4)
 
 ## <a name="heading-1"></a>Overview
 
@@ -108,6 +108,8 @@ Once I filtered out the gym topics, I split the remaining data into 5 topics. Th
 |9 |china |vote  |support |arrest  |american|
 |10  |report  |supporter |blacktolive |black |hillary|
 
+## <a name="heading-4"></a>Visualization
+
 I decided to keep these topics general to begin with. I gave them labels best describing the political focus based on the top words. A topic for general news posts, right wing focused tweets, and left wing focused tweets.:
 
 - Topic #01: **News**
@@ -120,4 +122,6 @@ I then used NLTK's vader sentiment analysis to further specify the topic names. 
 
 I gave the negative right or left tweets labels of toxic as well. However the toxic left wing did not have a large quantity to show any separation so I included them all with left wing tweets. Overall I ended up with the following topics which I color coded for some plots below.
 
-![image-center](/assets/images/trolltweets/legend.png)
+![legend](/assets/images/trolltweets/legend.png){: .center-image }
+
+The plots below show 
