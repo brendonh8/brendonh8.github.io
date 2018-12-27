@@ -126,9 +126,9 @@ I gave the negative right or left tweets labels of toxic as well. However the to
 
 The plots below show the levels of activity of IRA during different times of the day.
 
-<figure>
-  <img src="/assets/images/trolltweets/avg_before.png" width='350'>
-  <img src="/assets/images/trolltweets/avg_after.png" width='350'>
+<figure class="half">
+  <img src="/assets/images/trolltweets/avg_before.png">
+  <img src="/assets/images/trolltweets/avg_after.png">
   <figcaption>Left: Tweet activity from 2015 till Dec 2016. Right: Tweet Activity from Jan 2017 until May 2018.</figcaption>
 </figure>
 
