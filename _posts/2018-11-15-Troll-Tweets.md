@@ -157,3 +157,5 @@ There are distinct groups between the Repulican and Democrat users, however not 
 ## <a name="heading-5"></a>Limitations
 
 NMF proved to be a useful algorithm to uncover structure behind this Russian troll company. However, it is still difficult to uncover smaller details in the tweets. Factorization methods like NMF and LDA, while being useful are still just fancy ways to count words. Meaning behind the sentences are lost and while sentiment analysis can uncover some more details about the text, it is still not totally accurate. Tweets can have so many different focuses within them that it is difficult to go deeper than just general topics like Republican or Democrat. A more robust solution may be to use neural networks that can understand not only a count of words in each tweet but how they are organized as well. The next NLP project I pursue will most likely make use of some type of neural network.
+
+You can find my notebooks on my github [here](https://github.com/brendonh8/NLP-of-Troll-Tweets).
