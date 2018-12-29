@@ -16,6 +16,8 @@ excerpt: "Detecting drowsy driving from live video using Neural Networks"
 
 - [Head Tilt](#heading-4)
 
+- [Final Product](#heading-5)
+
 ## <a name="heading-1"></a>Overview
 
 I decided to focus on a problem that has the potential to affect all of us for this project. I am going to try and solve the issue of falling asleep at the wheel by using a live video feed to detect drowsiness.
@@ -50,7 +52,7 @@ Once a face is detected, two dimensional points can be mapped to the facial feat
 
 ![image-center](/assets/images/drowsydriving/face_hog.png){: .align-center}
 
-## <a name="heading-2"></a>Neural Network
+## <a name="heading-3"></a>Neural Network
 
 The neural network that I used to determine if th eyes were open or closed was kept simple to allow for fast calculations that could be done in real time. Neural networks are typically very data hungry which was concerning at first because face images are not the easiest datasets to come across. The dataset I used had approximately 3,000 pictures of faces labeled open and closed and can be found [here](http://parnec.nuaa.edu.cn/xtan/data/ClosedEyeDatabases.html). I extracted the eyes from these images just the same as I would on live frames using HOG. Since there is not too much variation in eye images, the network actually performed fine using just this small amount of data. 
 
@@ -87,4 +89,22 @@ The Adam optimizer is slightly more robust than classic stochastic gradient dece
 
 Putting this to use in the live video stream, I count every frame that the eyes are detected as closed and once the counter hits a certain threshold, an alarm will sound to wake up the driver. This threshold will depend on the fps of the camera as well as the tilt of the drivers head.
 
-## <a name="heading-3"></a>Head Tilt
+## <a name="heading-4"></a>Head Tilt
+
+Calculating head tilt involves using a method called Perspective-n-Point (PNP) typically used in computer vision applications. This algorithm is used to find the pose of an object in an image when the locations of **n** 3-D points are known as well as corresponding 2-D projections. This is the reason that I mapped the 3-D estimated points to the image. 
+
+Determining head orientation is entirely dependent on movement about some determined axes. There are two types of movement that can occur:
+
+- Translation: Movement from the current 3D location (X, Y, Z), to a new 3D location (X', Y', Z'). Translation has three degrees of freedom. 
+
+- Rotation: Staying in the same 3D location, you can rotate around the current (X, Y, Z) axes. Rotation will also have three degrees of freedom. Commonly known as roll, pitch, and yaw.
+
+Estimating the orientation of a face would mean having to find the numbers for each of these degrees of freedom. There have been a couple different discoveries of ways to solve the perspective problem and they are all fairly complicated. OpenCV has a solvePNP function that makes face orientation easy to determine with the 3D and 2D points that I mapped. SolvePNP uses some methods called Direct Linear Transform and Levenberg-Marquardt Optimization in order to transform points on the world coordinates (the points that I mapped to the face) onto 3D points in camera coordinates which can then be projected onto the image plane. These three coordinate systems can be seen below:
+
+![image-center](/assets/images/drowsydriving/face_hog.png){: .align-center}
+
+The dotted line is showing that the points in the world coordinates are being transformed onto the camera coordinates, which are then projected to the image plane (c). These methods can get quite complicated but if you are interested you can find a paper [here](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.560.7021&rep=rep1&type=pdf) that compares some pose estimation methods. 
+
+Intuitively, if a drivers head is tilted AND their eyes are closed, that is not a good sign. My wake up alarm is all based on timing, so if their head is tilted and eyes are closed, I half the threshold that will set the alarm off. I set the alarm to go off between 2-3 seconds of closed eyes so around 1 second if the head is tilted as well. If these seem like short amounts of time, imaging how often you actually close your eyes for three seconds while driving. 
+
+## <a name="heading-5"></a>Final Product
