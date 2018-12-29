@@ -114,5 +114,5 @@ The final product works fairly well. I ran it on an example video of a driver fa
 I overlayed a couple things on the video so you can see what the computer is using to perform calculations. The red dots are the estimated 3D layers that were used to find the orientation axes. These axes are the small lines in the middle of the face. The red line that is pointing outward is used to find tilt. The boxes are the extracted eye regions for the neural network. The drivers head actually falls behind a mirror ornament and the face detector starts to have trouble with detection. However my model successfully anticipated sleep and sounded the alarm before his head fell. The siren is not him getting pulled over, thats the sound I thought would be most effective to wake up a driver.
 
 <video width="480" height="320" controls="controls">
-  <source src="/assets/images/drowsydriving/output_tilt.mp4" type="video/mp4">
+  <source src="/assets/images/drowsydriving/final.mp4" type="video/mp4">
 </video>
