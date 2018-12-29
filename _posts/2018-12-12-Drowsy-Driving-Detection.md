@@ -108,3 +108,11 @@ The dotted line is showing that the points in the world coordinates are being tr
 Intuitively, if a drivers head is tilted AND their eyes are closed, that is not a good sign. My wake up alarm is all based on timing, so if their head is tilted and eyes are closed, I half the threshold that will set the alarm off. I set the alarm to go off between 2-3 seconds of closed eyes so around 1 second if the head is tilted as well. If these seem like short amounts of time, imaging how often you actually close your eyes for three seconds while driving. 
 
 ## <a name="heading-5"></a>Final Product
+
+The final product works fairly well. I ran it on an example video of a driver falling asleep but it works just as well in real time. I plan to make a web app once I get a chance so you can see how it works just using a computer camera. 
+
+I overlayed a couple things on the video so you can see what the computer is using to perform calculations. The red dots are the estimated 3D layers that were used to find the orientation axes. These axes are the small lines in the middle of the face. The red line that is pointing outward is used to find tilt. The boxes are the extracted eye regions for the neural network. The drivers head actually falls behind a mirror ornament and the face detector starts to have trouble with detection. However my model successfully anticipated sleep and sounded the alarm before his head fell. The siren is not him getting pulled over, thats the sound I thought would be most effective to wake up a driver.
+
+<video width="480" height="320" controls="controls">
+  <source src="/assets/images/drowsydriving/output_tilt.avi" type="video/avi">
+</video>
