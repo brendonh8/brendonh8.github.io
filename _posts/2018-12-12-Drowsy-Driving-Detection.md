@@ -95,13 +95,13 @@ Calculating head tilt involves using a method called Perspective-n-Point (PNP) t
 
 Determining head orientation is entirely dependent on movement about some determined axes. There are two types of movement that can occur:
 
-- Translation: Movement from the current 3D location (X, Y, Z), to a new 3D location (X', Y', Z'). Translation has three degrees of freedom. 
+- **Translation**: Movement from the current 3D location (X, Y, Z), to a new 3D location (X', Y', Z'). Translation has three degrees of freedom. 
 
-- Rotation: Staying in the same 3D location, you can rotate around the current (X, Y, Z) axes. Rotation will also have three degrees of freedom. Commonly known as roll, pitch, and yaw.
+- **Rotation**: Staying in the same 3D location, you can rotate around the current (X, Y, Z) axes. Rotation will also have three degrees of freedom. Commonly known as roll, pitch, and yaw.
 
 Estimating the orientation of a face would mean having to find the numbers for each of these degrees of freedom. There have been a couple different discoveries of ways to solve the perspective problem and they are all fairly complicated. OpenCV has a solvePNP function that makes face orientation easy to determine with the 3D and 2D points that I mapped. SolvePNP uses some methods called Direct Linear Transform and Levenberg-Marquardt Optimization in order to transform points on the world coordinates (the points that I mapped to the face) onto 3D points in camera coordinates which can then be projected onto the image plane. These three coordinate systems can be seen below:
 
-![image-center](/assets/images/drowsydriving/face_hog.png){: .align-center}
+![image-center](/assets/images/drowsydriving/pnp.jpg){: .align-center}
 
 The dotted line is showing that the points in the world coordinates are being transformed onto the camera coordinates, which are then projected to the image plane (c). These methods can get quite complicated but if you are interested you can find a paper [here](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.560.7021&rep=rep1&type=pdf) that compares some pose estimation methods. 
 
