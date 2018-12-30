@@ -1,5 +1,5 @@
 ---
-permalink: /data-analysis/
+permalink: /Archive/
 layout: archive
 title: "Data Analysis Projects Organized by Tools Used"
 author_profile: true
