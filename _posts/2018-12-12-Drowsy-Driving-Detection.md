@@ -124,3 +124,5 @@ I overlayed a couple things on the video so you can see what the computer is usi
 Watching the video, there are obviously some limitations to the model. The first being the face detector. This shouldn't be a problem in real applications as the camera would be centered so the drivers face would not go out of frame. There is only really a problem when an eye is covered as they seem to be the biggest features in detecting a face. I tried the face detector while covering my mouth and it still knew my face was there.
 
 The other problem is image quality and nighttime. A semi-decent camera will need to be used to really be effective. A night vision camera is also very necessary as the most likely time to fall asleep while driving is at night. Sunglasses are also an issue, the model will have to act solely on face tilt if sunglasses are being used.
+
+The files I created for this project can be found [here](https://github.com/brendonh8/Drowsiness-Detector).
